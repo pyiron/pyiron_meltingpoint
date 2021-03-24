@@ -1,0 +1,1 @@
+The potential Si.sw is from NIST repository. Ref: F.H. Stillinger, and T.A. Weber (1985), "Computer simulation of local order in condensed phases of silicon", Physical Review B, 31(8), 5262-5271. DOI: 10.1103/physrevb.31.5262.

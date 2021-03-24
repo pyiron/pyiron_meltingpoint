@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; pyiron_meltingpoint</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="From here on the notebook is automated - no change required !" href="examples/bccFe/script.nbconvert.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_dark.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">pyiron_meltingpoint</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/bccFe/script.nbconvert.html">
+   From here on the notebook is automated - no change required !
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/bccFe/script.nbconvert.html#step-1-set-up-the-solid-sample-and-roughly-estimate-a-melting-point">
+   Step 1: set up the solid sample and roughly estimate a melting point
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/bccFe/script.nbconvert.html#step-2-set-up-the-interface-structure">
+   Step 2: set up the interface structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/bccFe/script.nbconvert.html#step-3-run-nvt-and-nve-md">
+   Step 3: run NVT and NVE MD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/bccFe/script.nbconvert.html#step-4-full-cycle-predict-the-final-melting-point">
+   Step 4: full cycle, predict the final melting point
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/diaSi/script.nbconvert.html">
+   From here on the notebook is automated - no change required !
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/diaSi/script.nbconvert.html#step-1-set-up-the-solid-sample-and-roughly-estimate-a-melting-point">
+   Step 1: set up the solid sample and roughly estimate a melting point
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/diaSi/script.nbconvert.html#step-2-set-up-the-interface-structure">
+   Step 2: set up the interface structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/diaSi/script.nbconvert.html#step-3-run-nvt-and-nve-md">
+   Step 3: run NVT and NVE MD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/diaSi/script.nbconvert.html#step-4-full-cycle-predict-the-final-melting-point">
+   Step 4: full cycle, predict the final melting point
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/fccAl/script.nbconvert.html">
+   From here on the notebook is automated - no change required !
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/fccAl/script.nbconvert.html#step-1-set-up-the-solid-sample-and-roughly-estimate-a-melting-point">
+   Step 1: set up the solid sample and roughly estimate a melting point
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/fccAl/script.nbconvert.html#step-2-set-up-the-interface-structure">
+   Step 2: set up the interface structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/fccAl/script.nbconvert.html#step-3-run-nvt-and-nve-md">
+   Step 3: run NVT and NVE MD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/fccAl/script.nbconvert.html#step-4-full-cycle-predict-the-final-melting-point">
+   Step 4: full cycle, predict the final melting point
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/hcpMg/script.nbconvert.html">
+   From here on the notebook is automated - no change required !
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/hcpMg/script.nbconvert.html#step-1-set-up-the-solid-sample-and-roughly-estimate-a-melting-point">
+   Step 1: set up the solid sample and roughly estimate a melting point
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/hcpMg/script.nbconvert.html#step-2-set-up-the-interface-structure">
+   Step 2: set up the interface structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/hcpMg/script.nbconvert.html#step-3-run-nvt-and-nve-md">
+   Step 3: run NVT and NVE MD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/hcpMg/script.nbconvert.html#step-4-full-cycle-predict-the-final-melting-point">
+   Step 4: full cycle, predict the final melting point
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://pyiron.org">pyiron</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#different-versions">
+   Different Versions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-melting-point-method-in-pyiron">
+   Use the melting point method in pyiron
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     Installation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-the-jupyter-notebook">
+     Run the Jupyter Notebook
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyse">
+     Analyse
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-melting-point-method-with-snakemake">
+   Use the melting point method with snakemake
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faq">
+   FAQ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-run-in-parallel">
+     How to run in parallel?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-submit-a-melting-point-calculation-to-the-queue">
+     How to submit a melting point calculation to the queue?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgments">
+   Acknowledgments
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="http://pyiron.org">pyiron</a> based module and Jupyter Notebook <em>Melting</em> allow the fully automated computation of melting points of unary crystals for arbitrary interatomic potentials that are compatible with the molecular dynamics engine <a class="reference external" href="https://lammps.sandia.gov">LAMMPS</a>. It is based on the interface method where the evolution of the solid and the liquid phase are monitored as function of temperature. The only mandatory input parameters required are the chemical element and the interatomic potential file.</p>
+</div>
+<div class="section" id="different-versions">
+<h1>Different Versions<a class="headerlink" href="#different-versions" title="Permalink to this headline">¶</a></h1>
+<p>The melting point simulation protocol is continously improved based on the feedback from different users. This <a class="reference external" href="https://github.com/pyiron/pyiron_meltingpoint">repository</a> always includes the latest version, older versions are available as tagged releases.</p>
+<ul class="simple">
+<li><p><strong>Version 1.0</strong> - This version was originally published in Computational Materials Science. It uses <a class="reference external" href="https://www.ovito.org">ovito</a> for structure analysis and supports bcc, fcc and hcp structures.</p></li>
+<li><p><strong>Version 1.1</strong> - Adds support for diamond structures. In addition <a class="reference external" href="https://pyscal.org">pyscal</a> is used for structure analysis, python 3.9 support is added as well as support for Mac OS X. On windows it is recommended to use the linux subsystem for windows.</p></li>
+</ul>
+</div>
+<div class="section" id="use-the-melting-point-method-in-pyiron">
+<h1>Use the melting point method in pyiron<a class="headerlink" href="#use-the-melting-point-method-in-pyiron" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://pyiron.org">pyiron</a> is an integrated development environment (IDE) for computational materials science. It was used to develop the melting point protocol and is designed for the development of complex simulation protocols in general. If you are already a pyiron user or want to understand the detailed steps of the melting point method we recommend using the melting point protocol with pyiron. If you are only interested in the calculated melting point values, the snakemake approach explained below might be more suitable for you. Both approaches are limited to unix operation systems and have been successfully tested with the linux subsystem for windows.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Please install the following packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://pyiron.org">pyiron</a></p></li>
+<li><p><a class="reference external" href="https://pyscal.org">pyscal</a></p></li>
+<li><p><a class="reference external" href="https://lammps.sandia.gov">Lammps</a></p></li>
+</ul>
+<p>All packages are available via conda-forge and can be installed with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pyiron</span> <span class="n">nglview</span> <span class="n">lammps</span> <span class="n">jupyter_client</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">pyscal</span> <span class="n">mscorefonts</span>
+</pre></div>
+</div>
+<p>For the installation of pyiron and the configuration of Lammps and NGLview within pyiron please refer to the <a class="reference external" href="https://pyiron.readthedocs.io/en/latest/source/installation.html">pyiron manual</a>.</p>
+</div>
+<div class="section" id="run-the-jupyter-notebook">
+<h2>Run the Jupyter Notebook<a class="headerlink" href="#run-the-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p>You can directly download the Jupyter notebook from this Github repositorry <a class="reference external" href="https://github.com/pyrion/pyrion_meltingpoint/blob/master/scripts/script.ipynb"><em>script.ipynb</em></a> copy it to your pyiron projects folder and execute it there. In line 10 and 11 the input parameters can be modified to select a custom potential and change parameters of the melting point calculation. After the calculation finished successfully it creates an <em>output.json</em> file which contains the final melting point prediction as well as the intermediate results.</p>
+</div>
+<div class="section" id="analyse">
+<h2>Analyse<a class="headerlink" href="#analyse" title="Permalink to this headline">¶</a></h2>
+<p>You can analyse the melting point calculation using the <a class="reference external" href="https://github.com/pyrion/pyrion_meltingpoint/blob/master/scripts/plot.ipynb"><em>plot.ipynb</em></a> notebook.</p>
+</div>
+</div>
+<div class="section" id="use-the-melting-point-method-with-snakemake">
+<h1>Use the melting point method with snakemake<a class="headerlink" href="#use-the-melting-point-method-with-snakemake" title="Permalink to this headline">¶</a></h1>
+<p>In contrast to the pyiron approach snakemake drastically reduces the number of input parameters available to the user. Snakemake handles the setup of pyiron and the installation of the dependencies via conda. This method is recommended for high throughput calculation as well as automated validation of interatomic potentials. Still it might also be sufficient for users who just want to calculate the melting point for a given interatomic potential. Both approaches are limited to the linux operation system and have been successfully tested with the linux subsystem for windows.</p>
+<p>Start with installing snakemake from conda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">snakemake</span><span class="o">=</span><span class="mf">5.30</span>
+</pre></div>
+</div>
+<p>Copy one of the <em>input.json</em> files from the examples to the root of this directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">examples</span><span class="o">/</span><span class="n">bccFe</span><span class="o">/</span><span class="nb">input</span><span class="o">.</span><span class="n">json</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>The content of the <em>input.json</em> is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;pair_style eam/alloy </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;pair_coeff * * Fe-C-Bec07.eam Fe C</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="p">],</span> 
+    <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;./examples/bccFe/Fe-C-Bec07.eam&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Fe&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span> 
+    <span class="s2">&quot;element&quot;</span><span class="p">:</span> <span class="s2">&quot;Fe&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>After copying the <em>input.json</em> it can be executed using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">conda</span> <span class="o">--</span><span class="n">cores</span> <span class="mi">1</span> 
+</pre></div>
+</div>
+<p>The parameters defined in the <em>input.json</em> file will overwrite those in the Jupyter notebook. With this approach, there is no need to interfere with all the computational and technical details.</p>
+<p>The results are saved in the <em>output.json</em> file and can be analysed with the <a class="reference external" href="https://github.com/pyrion/pyrion_meltingpoint/blob/master/scripts/plot.ipynb"><em>plot.ipynb</em></a> notebook.</p>
+</div>
+<div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-run-in-parallel">
+<h2>How to run in parallel?<a class="headerlink" href="#how-to-run-in-parallel" title="Permalink to this headline">¶</a></h2>
+<p>A single melting point calculation takes 50-100 CPU hours, so it makes a lot of sense to run the code in parallel. While the protocol itself is written in a serial way, the individual Lammps calculation can be executed in parallel. To enable parallel execution inset the option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;cpu_cores&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>Either in line 10 of the jupyter notebook or in the <em>input.json</em> file. When snakemake is used it is not necessary to increase the <code class="docutils literal notranslate"><span class="pre">--cores</span></code> count in the snakemake command.</p>
+</div>
+<div class="section" id="how-to-submit-a-melting-point-calculation-to-the-queue">
+<h2>How to submit a melting point calculation to the queue?<a class="headerlink" href="#how-to-submit-a-melting-point-calculation-to-the-queue" title="Permalink to this headline">¶</a></h2>
+<p>If you execute the notebook in pyiron, you can simply specify the queue in line 10 by adding the option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;queue&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">queue_name</span><span class="o">&gt;</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">&lt;queue_name&gt;</span></code> the name of the queue the calculation should be submitted to. More details about the queuing system configuration in pyiron is available as part of the <a class="reference external" href="https://github.com/pyiron/pysqa">pysqa</a> package.</p>
+<p>In contrast the <code class="docutils literal notranslate"><span class="pre">snakemake</span></code> command can be directly included in the submit script you usually use to submit calculation to your cluster. Here is an example submit script for the SLURM queuing system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">#SBATCH --time=00:10:00</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks-per-node=8</span>
+<span class="c1">#SBATCH --job-name=&quot;melting_point&quot;</span>
+
+<span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">conda</span> <span class="o">--</span><span class="n">cores</span> <span class="mi">1</span> 
+</pre></div>
+</div>
+<p>In addition to specifying the number of cores in the submit script it is also necessary to set the <code class="docutils literal notranslate"><span class="pre">cpu_cores</span></code> option in the <em>input.json</em> file as explained above.</p>
+</div>
+</div>
+<div class="section" id="acknowledgments">
+<h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h1>
+<p>If you use the melting point protocol in your scientific work, please consider citing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nd">@article</span><span class="p">{</span><span class="n">melting</span><span class="o">-</span><span class="n">paper</span><span class="p">,</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span> <span class="n">fully</span> <span class="n">automated</span> <span class="n">approach</span> <span class="n">to</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">melting</span> <span class="n">temperature</span> <span class="n">of</span> <span class="n">elemental</span> <span class="n">crystals</span><span class="p">},</span>
+    <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Computational</span> <span class="n">Materials</span> <span class="n">Science</span><span class="p">}</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">187</span><span class="p">},</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">110065</span><span class="p">},</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="p">},</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1016</span><span class="o">/</span><span class="n">j</span><span class="o">.</span><span class="n">commatsci</span><span class="o">.</span><span class="mf">2020.110065</span><span class="p">},</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">sciencedirect</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">science</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">pii</span><span class="o">/</span><span class="n">S0927025620305565</span><span class="p">},</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Li</span><span class="o">-</span><span class="n">Fang</span> <span class="n">Zhu</span> <span class="ow">and</span> <span class="n">Jan</span> <span class="n">Janssen</span> <span class="ow">and</span> <span class="n">Shoji</span> <span class="n">Ishibashi</span> <span class="ow">and</span> <span class="n">Fritz</span> <span class="n">Körmann</span> <span class="ow">and</span> <span class="n">Blazej</span> <span class="n">Grabowski</span> <span class="ow">and</span> <span class="n">Jörg</span> <span class="n">Neugebauer</span><span class="p">},</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">Interface</span> <span class="n">method</span><span class="p">,</span> <span class="n">Melting</span> <span class="n">point</span><span class="p">,</span> <span class="n">Arbitrary</span> <span class="n">potential</span><span class="p">,</span> <span class="n">pyiron</span><span class="p">},</span>
+  <span class="p">}</span>
+
+  <span class="nd">@article</span><span class="p">{</span><span class="n">pyiron</span><span class="o">-</span><span class="n">paper</span><span class="p">,</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">pyiron</span><span class="p">:</span> <span class="n">An</span> <span class="n">integrated</span> <span class="n">development</span> <span class="n">environment</span> <span class="k">for</span> <span class="n">computational</span> <span class="n">materials</span> <span class="n">science</span><span class="p">},</span>
+    <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Computational</span> <span class="n">Materials</span> <span class="n">Science</span><span class="p">},</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">163</span><span class="p">},</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">24</span> <span class="o">-</span> <span class="mi">36</span><span class="p">},</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2019</span><span class="p">},</span>
+    <span class="n">issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0927</span><span class="o">-</span><span class="mi">0256</span><span class="p">},</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1016</span><span class="o">/</span><span class="n">j</span><span class="o">.</span><span class="n">commatsci</span><span class="o">.</span><span class="mf">2018.07</span><span class="o">.</span><span class="mi">043</span><span class="p">},</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">sciencedirect</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">science</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">pii</span><span class="o">/</span><span class="n">S0927025618304786</span><span class="p">},</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Jan</span> <span class="n">Janssen</span> <span class="ow">and</span> <span class="n">Sudarsan</span> <span class="n">Surendralal</span> <span class="ow">and</span> <span class="n">Yury</span> <span class="n">Lysogorskiy</span> <span class="ow">and</span> <span class="n">Mira</span> <span class="n">Todorova</span> <span class="ow">and</span> <span class="n">Tilmann</span> <span class="n">Hickel</span> <span class="ow">and</span> <span class="n">Ralf</span> <span class="n">Drautz</span> <span class="ow">and</span> <span class="n">Jörg</span> <span class="n">Neugebauer</span><span class="p">},</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">Modelling</span> <span class="n">workflow</span><span class="p">,</span> <span class="n">Integrated</span> <span class="n">development</span> <span class="n">environment</span><span class="p">,</span> <span class="n">Complex</span> <span class="n">simulation</span> <span class="n">protocols</span><span class="p">},</span>
+  <span class="p">}</span>
+  
+  <span class="nd">@article</span><span class="p">{</span><span class="n">pyscal</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Sarath</span> <span class="n">Menon</span> <span class="ow">and</span> <span class="n">Grisell</span> <span class="n">Díaz</span> <span class="n">Leines</span> <span class="ow">and</span> <span class="n">Jutta</span> <span class="n">Rogal</span><span class="p">},</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">pyscal</span><span class="p">:</span> <span class="n">A</span> <span class="n">python</span> <span class="n">module</span> <span class="k">for</span> <span class="n">structural</span> <span class="n">analysis</span> <span class="n">of</span> <span class="n">atomic</span> <span class="n">environments</span><span class="p">}},</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="mi">2019</span><span class="p">,</span>
+    <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Journal</span> <span class="n">of</span> <span class="n">Open</span> <span class="n">Source</span> <span class="n">Software</span><span class="p">},</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.21105</span><span class="o">/</span><span class="n">joss</span><span class="o">.</span><span class="mi">01824</span><span class="p">},</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.21105</span><span class="o">/</span><span class="n">joss</span><span class="o">.</span><span class="mi">01824</span><span class="p">},</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">},</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">43</span><span class="p">},</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1824</span><span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="examples/bccFe/script.nbconvert.html" title="next page">From here on the notebook is automated - no change required !</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By pyiron<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
