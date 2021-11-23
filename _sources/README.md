@@ -6,6 +6,8 @@ The melting point simulation protocol is continously improved based on the feedb
 
 * **Version 1.0** - This version was originally published in Computational Materials Science. It uses [ovito](https://www.ovito.org) for structure analysis and supports bcc, fcc and hcp structures. 
 * **Version 1.1** - Adds support for diamond structures. In addition [pyscal](https://pyscal.org) is used for structure analysis, python 3.9 support is added as well as support for Mac OS X. On windows it is recommended to use the linux subsystem for windows. 
+* **Version 1.2** - Fix numpy Version to 1.19.5.
+* **Version 1.3** - Update dependencies to use `pyiron_atomistics` rather than `pyiron`
 
 # Use the melting point method in pyiron
 [pyiron](http://pyiron.org) is an integrated development environment (IDE) for computational materials science. It was used to develop the melting point protocol and is designed for the development of complex simulation protocols in general. If you are already a pyiron user or want to understand the detailed steps of the melting point method we recommend using the melting point protocol with pyiron. If you are only interested in the calculated melting point values, the snakemake approach explained below might be more suitable for you. Both approaches are limited to unix operation systems and have been successfully tested with the linux subsystem for windows. 
