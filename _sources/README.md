@@ -15,13 +15,13 @@ The melting point simulation protocol is continously improved based on the feedb
 ## Installation 
 Please install the following packages: 
 
-- [pyiron](http://pyiron.org)
+- [pyiron_atomistics](http://pyiron.org)
 - [pyscal](https://pyscal.org)
 - [Lammps](https://lammps.sandia.gov)
 
 All packages are available via conda-forge and can be installed with the following command: 
 ```
-conda install -c conda-forge pyiron nglview lammps jupyter_client scikit-learn pyscal mscorefonts
+conda install -c conda-forge pyiron_atomistics nglview lammps jupyter_client scikit-learn pyscal mscorefonts
 ```
 
 For the installation of pyiron and the configuration of Lammps and NGLview within pyiron please refer to the [pyiron manual](https://pyiron.readthedocs.io/en/latest/source/installation.html).
