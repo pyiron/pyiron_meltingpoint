@@ -27,10 +27,10 @@ conda install -c conda-forge pyiron_atomistics nglview lammps jupyter_client sci
 For the installation of pyiron and the configuration of Lammps and NGLview within pyiron please refer to the [pyiron manual](https://pyiron.readthedocs.io/en/latest/source/installation.html).
 
 ## Run the Jupyter Notebook
-You can directly download the Jupyter notebook from this Github repositorry [*script.ipynb*](https://github.com/pyrion/pyrion_meltingpoint/blob/master/scripts/script.ipynb) copy it to your pyiron projects folder and execute it there. In line 10 and 11 the input parameters can be modified to select a custom potential and change parameters of the melting point calculation. After the calculation finished successfully it creates an *output.json* file which contains the final melting point prediction as well as the intermediate results. 
+You can directly download the Jupyter notebook from this Github repositorry [*script.ipynb*](https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/script.ipynb) copy it to your pyiron projects folder and execute it there. In line 10 and 11 the input parameters can be modified to select a custom potential and change parameters of the melting point calculation. After the calculation finished successfully it creates an *output.json* file which contains the final melting point prediction as well as the intermediate results. 
 
 ## Analyse 
-You can analyse the melting point calculation using the [*plot.ipynb*](https://github.com/pyrion/pyrion_meltingpoint/blob/master/scripts/plot.ipynb) notebook. 
+You can analyse the melting point calculation using the [*plot.ipynb*](https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/plot.ipynb) notebook. 
 
 # Use the melting point method with snakemake 
 In contrast to the pyiron approach snakemake drastically reduces the number of input parameters available to the user. Snakemake handles the setup of pyiron and the installation of the dependencies via conda. This method is recommended for high throughput calculation as well as automated validation of interatomic potentials. Still it might also be sufficient for users who just want to calculate the melting point for a given interatomic potential. Both approaches are limited to the linux operation system and have been successfully tested with the linux subsystem for windows. 
@@ -63,7 +63,7 @@ snakemake --use-conda --cores 1
 ```
 The parameters defined in the *input.json* file will overwrite those in the Jupyter notebook. With this approach, there is no need to interfere with all the computational and technical details. 
     
-The results are saved in the *output.json* file and can be analysed with the [*plot.ipynb*](https://github.com/pyrion/pyrion_meltingpoint/blob/master/scripts/plot.ipynb) notebook. 
+The results are saved in the *output.json* file and can be analysed with the [*plot.ipynb*](https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/plot.ipynb) notebook. 
 
 # FAQ
 ## How to run in parallel? 
