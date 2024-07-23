@@ -2,13 +2,13 @@ channels:
 - conda-forge
 - bioconda
 dependencies:
-- python=3.10
-- lammps=2023.03.28
-- pyiron_atomistics=0.3.0
-- pyiron_base=0.6.1
-- jupyter_client=8.3.0
-- papermill=2.3.4
-- scikit-learn=1.2.2
-- nglview=3.0.6
+- python=3.12
+- lammps=2024.02.07=*openmpi*
+- pyiron_atomistics=0.6.6
+- pyiron_base=0.9.7
+- jupyter_client=8.6.2
+- papermill=2.6.0
+- scikit-learn=1.5.1
+- nglview=3.1.2
 - mscorefonts=0.0.1
-- numpy=1.24.4
+- numpy=1.26.4

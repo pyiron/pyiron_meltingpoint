@@ -21,7 +21,7 @@ Please install the following packages:
 
 All packages are available via conda-forge and can be installed with the following command: 
 ```
-conda install -c conda-forge pyiron_atomistics nglview lammps jupyter_client scikit-learn pyscal mscorefonts
+conda install -c conda-forge pyiron_atomistics=0.6.6 lammps=2024.02.07=*openmpi* nglview=3.1.2 mscorefonts=0.0.1 pyiron-data=0.0.30
 ```
 
 For the installation of pyiron and the configuration of Lammps and NGLview within pyiron please refer to the [pyiron manual](https://pyiron.readthedocs.io/en/latest/source/installation.html).
@@ -72,6 +72,17 @@ A single melting point calculation takes 50-100 CPU hours, so it makes a lot of 
 "cpu_cores": 8,
 ```
 Either in line 10 of the jupyter notebook or in the *input.json* file. When snakemake is used it is not necessary to increase the `--cores` count in the snakemake command. 
+
+## How to reset a failed calculation? 
+The melting point protocol uses the [pyiron.org](https://pyiron.org) workflow framework. So the calculation are stored in a folder named `melting` as HDF5 files `*.h5` and in 
+addition [pyiron.org](https://pyiron.org) workflow framework uses an SQLite database named `pyiron.db` typically located in the users home directory `~/pyiron.db`. To delete the calculatuio within [pyiron.org](https://pyiron.org), create a new jupyter notebook and execute the following lines: 
+```python
+from pyiron_base import Project
+pr = Project("melting")
+pr.remove_jobs(recursive=True, silently=True)
+```
+This deletes all the job objects in the folder `melting`. In case you already removed the files in this folder manually and this reset generates and error, then it is recommended 
+to simply delete the SQLite database named `pyiron.db` in your home directory `~/pyiron.db`.
 
 ## How to submit a melting point calculation to the queue? 
 If you execute the notebook in pyiron, you can simply specify the queue in line 10 by adding the option: 
