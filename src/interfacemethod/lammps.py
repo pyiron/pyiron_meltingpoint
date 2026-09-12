@@ -145,7 +145,7 @@ def run_npt_step(
 def npt_solid(
     temperature: float,
     basis: Atoms,
-    project_parameter: str,
+    project_parameter: dict,
     project_path: str,
     timestep: float = 1.0,
     lmp_command: str = "lmp -in lmp.in",
