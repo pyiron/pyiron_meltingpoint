@@ -22,6 +22,7 @@ def bisection_step(
     diamond_flag: bool,
     seed: int,
     project_path: str,
+    lmp_command: str ="lmp -in lmp.in",
 ):
     """
     Perform one bisection step in the melting temperature search.
@@ -81,6 +82,7 @@ def bisection_step(
             seed=seed,
             run_time_steps=run_time_steps,
             project_path=project_path,
+            lmp_command=lmp_command,
         )
     elif (
         structure_left_dict[key_max] / number_of_atoms
@@ -96,6 +98,7 @@ def bisection_step(
             seed=seed,
             run_time_steps=run_time_steps,
             project_path=project_path,
+            lmp_command=lmp_command,
         )
     elif (
         structure_left_dict[key_max] / number_of_atoms < distribution_initial_half
