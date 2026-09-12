@@ -6,9 +6,10 @@ if __name__ == "__main__":
         data = tomlkit.load(f)
 
     lst = list(data['build-system']['requires'])
-    for sub_lst in data["project"]["optional-dependencies"].values():
-        for el in sub_lst:
-            lst.append(el)
+    if "optional-dependencies" in data["project"]:
+        for sub_lst in data["project"]["optional-dependencies"].values():
+            for el in sub_lst:
+                lst.append(el)
 
     data["project"]["dependencies"] += list(set(lst))
 
