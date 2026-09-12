@@ -1,0 +1,136 @@
+name: Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'docs/**'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: psf/black@stable
+      with:
+        options: "--check --diff"
+        src: ./src/interfacemethod
+
+  black_fix:  # in most cases pre-commit is faster
+    needs: [black]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.DEPENDABOT_WORKFLOW_TOKEN }}
+        ref: ${{ github.event.pull_request.head.ref }} # Check out the head of the actual branch, not the PR
+        fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
+    - name: format black
+      uses: psf/black@stable
+      with:
+        options: ""
+        src: "./src/interfacemethod"
+    - name: commit
+      run: |
+        git config --local user.email "pyiron@mpie.de"
+        git config --local user.name "pyiron-runner"
+        git commit -m "Format black" -a
+    - name: push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.DEPENDABOT_WORKFLOW_TOKEN }}
+        branch: ${{ github.event.pull_request.head.ref }}
+
+  mypy:
+    needs: [black]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          architecture: x64
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install mypy
+        run: pip install mypy
+      - name: Test
+        run: mypy --ignore-missing-imports src/interfacemethod
+
+  pip_check:
+    needs: [black]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: '3.14'
+        miniforge-version: latest
+        channels: conda-forge
+        conda-remove-defaults: "true"
+        environment-file: environment.yml
+    - name: Setup
+      shell: bash -l {0}
+      run: |
+        pip install tomlkit
+        python .ci_support/check.py
+        cat pyproject.toml
+        pip install . --no-deps --no-build-isolation
+        pip check
+
+  uv_check:
+    needs: [black]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: astral-sh/setup-uv@v7
+    - name: Install the project and pip check
+      shell: bash -l {0}
+      run: |
+        uv sync --all-extras --dev
+        pip check
+
+  unittest:
+    needs: [black]
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        include:
+        - operating-system: macos-latest
+          python-version: '3.14'
+
+        - operating-system: windows-latest
+          python-version: '3.14'
+
+        - operating-system: ubuntu-latest
+          python-version: '3.14'
+
+        - operating-system: ubuntu-latest
+          python-version: '3.13'
+
+        - operating-system: ubuntu-latest
+          python-version: '3.12'
+
+        - operating-system: ubuntu-latest
+          python-version: '3.11'
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+        miniforge-version: latest
+        channels: conda-forge
+        conda-remove-defaults: "true"
+        environment-file: environment.yml
+    - name: Test
+      shell: bash -l {0}
+      timeout-minutes: 5
+      run: |
+        pip install . --no-deps --no-build-isolation
+        cd tests
+        python -m unittest discover .
