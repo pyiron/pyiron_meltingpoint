@@ -1,0 +1,120 @@
+[build-system]
+requires = [
+    "hatchling==1.32.0",
+    "hatch-vcs==0.5.0",
+    "ase",
+    "lammpsparser",
+    "matplotlib",
+    "nglview",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "structuretoolkit",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "interfacemethod"
+description = "A fully automated approach to determine the melting temperature of crystalline materials."
+authors = [
+    { name = "Jan Janssen", email = "janssen@mpi-susmat.de" },
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["atomistic", "melting", "interface method", "lammps"]
+requires-python = ">3.9, <3.15"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: BSD License",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "ase==3.29.0",
+    "lammpsparser==0.0.9",
+    "matplotlib==3.11.1",
+    "nglview==3.1.4",
+    "numpy==2.5.3",
+    "pandas==3.0.5",
+    "scikit-learn==1.9.0",
+    "structuretoolkit==0.0.46",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "http://pyiron.org/pyiron_meltingpoint/"
+Documentation = "http://pyiron.org/pyiron_meltingpoint/"
+Repository = "https://github.com/pyiron/pyiron_meltingpoint"
+
+[tool.ruff]
+exclude = [".ci_support", "examples", "scripts", "tests", "_version.py"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # flake8-comprehensions
+    "C4",
+    # eradicate
+    "ERA",
+    # pylint
+    "PL",
+]
+ignore = [
+    # ignore line-length violations
+    "E501",
+    # ignore imports which are not at the top of a module
+    "PLC0415",
+    # Too many branches
+    "PLR0912",
+    # Too many arguments in function definition
+    "PLR0913",
+    # Too many statements
+    "PLR0915",
+    # Too many not-keyword-only arguments,
+    "PLR0917",
+    # Magic value used in comparison
+    "PLR2004",
+]
+
+[tool.hatch.build]
+include = [
+    "src/interfacemethod"
+]
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/interfacemethod/_version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/interfacemethod"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/interfacemethod"
+]
+
+[tool.hatch.version]
+source = "vcs"
+path = "src/interfacemethod/_version.py"
+
+[tool.coverage.run]
+source = ["interfacemethod"]
+command_line = "-m unittest discover tests"
