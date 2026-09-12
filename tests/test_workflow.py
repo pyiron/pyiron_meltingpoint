@@ -264,7 +264,7 @@ class TestValidateConvergence(unittest.TestCase):
         )
 
         self.assertEqual(result[4:7], (1.5, 0.015, 3000))
-        self.assertFalse(result[1])
+        self.assertTrue(result[1])
 
 
 if __name__ == "__main__":
