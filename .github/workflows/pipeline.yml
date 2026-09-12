@@ -77,7 +77,7 @@ jobs:
       shell: bash -l {0}
       run: |
         pip install tomlkit
-        python ci_support/check.py
+        python .github/ci_support/check.py
         cat pyproject.toml
         pip install . --no-deps --no-build-isolation
         pip check
