@@ -22,7 +22,7 @@ def bisection_step(
     diamond_flag: bool,
     seed: int,
     project_path: str,
-    lmp_command: str ="lmp -in lmp.in",
+    lmp_command: str = "lmp -in lmp.in",
 ):
     """
     Perform one bisection step in the melting temperature search.

@@ -40,7 +40,12 @@ def round_temperature_next(temperature_next: float) -> float:
     return np.round(temperature_next, 2)
 
 
-def get_nve_job_name(temperature_next: float, strain: float, steps_lst: list[int], nve_run_time_steps: int):
+def get_nve_job_name(
+    temperature_next: float,
+    strain: float,
+    steps_lst: list[int],
+    nve_run_time_steps: int,
+):
     temperature_next = round_temperature_next(temperature_next)
     temp_str = str(temperature_next).replace(".", "_")
     strain_str = str(strain).replace(".", "_")
