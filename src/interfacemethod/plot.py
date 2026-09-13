@@ -8,7 +8,9 @@ from interfacemethod.result import StrainPointResult
 from interfacemethod.structure import analyse_structure, get_voronoi_volume
 
 
-def plot_solid_liquid_ratio(strain_results: List[StrainPointResult], project_parameter, debug_plot=True):
+def plot_solid_liquid_ratio(
+    strain_results: List[StrainPointResult], project_parameter, debug_plot=True
+):
     cna_str = project_parameter["crystalstructure"].upper()
     ratio_lst = []
     for result in strain_results:
@@ -291,7 +293,9 @@ def ratio_selection(
 
 def check_for_holes(strain_results: List[StrainPointResult], debug_plot=True):
     strain_value_lst = [r.strain for r in strain_results]
-    max_lst, mean_lst = get_voronoi_volume(structure_lst=[r.structure for r in strain_results])
+    max_lst, mean_lst = get_voronoi_volume(
+        structure_lst=[r.structure for r in strain_results]
+    )
     if debug_plot:
         plt.plot(strain_value_lst, mean_lst, label="mean")
         plt.plot(strain_value_lst, max_lst, label="max")

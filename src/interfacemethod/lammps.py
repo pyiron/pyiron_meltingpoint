@@ -1,14 +1,20 @@
-import os 
+import os
 from ase.atoms import Atoms
 from lammpsparser import lammps_file_interface_function
 import numpy as np
 import pandas
 
-from interfacemethod.helper import freeze_one_half, round_temperature_next, get_nve_job_name
+from interfacemethod.helper import (
+    freeze_one_half,
+    round_temperature_next,
+    get_nve_job_name,
+)
 from interfacemethod.result import StrainPointResult
 
 
-def structure_from_parsed_output(initial_structure: Atoms, parsed_output: dict, *, wrap: bool = False) -> Atoms:
+def structure_from_parsed_output(
+    initial_structure: Atoms, parsed_output: dict, *, wrap: bool = False
+) -> Atoms:
     """Construct an `Atoms` object from parsed output data.
 
     Args:
@@ -42,7 +48,7 @@ def minimize_structure_positions(
     potential: pandas.DataFrame,
     project_path: str,
     max_iter: int = 1000,
-    lmp_command: str ="lmp -in lmp.in",
+    lmp_command: str = "lmp -in lmp.in",
 ) -> Atoms:
     """Relax the atomic positions of a structure at fixed cell shape."""
     _, parsed_output, _ = lammps_file_interface_function(
@@ -66,7 +72,7 @@ def minimize_structure_volume(
     potential: pandas.DataFrame,
     project_path: str,
     max_iter: int = 1000,
-    lmp_command: str ="lmp -in lmp.in",
+    lmp_command: str = "lmp -in lmp.in",
 ) -> Atoms:
     """Relax both atomic positions and cell volume of a structure at zero pressure."""
     _, parsed_output, _ = lammps_file_interface_function(
@@ -94,7 +100,7 @@ def run_npt_step(
     seed: int,
     project_path: str,
     run_time_steps: int = 10000,
-    lmp_command: str ="lmp -in lmp.in",
+    lmp_command: str = "lmp -in lmp.in",
 ):
     """
     Calculate NPT ensemble at a given temperature using the job defined in the project parameters:
@@ -112,7 +118,9 @@ def run_npt_step(
         Final Atomistic Structure object
     """
     _, parsed_output, _ = lammps_file_interface_function(
-        working_directory=os.path.join(project_path, "temp_heating", str(temperature).replace(".", "_")),
+        working_directory=os.path.join(
+            project_path, "temp_heating", str(temperature).replace(".", "_")
+        ),
         structure=structure,
         potential=potential,
         calc_mode="md",
@@ -126,19 +134,21 @@ def run_npt_step(
             "n_ionic_steps": run_time_steps,
             "seed": seed,
         },
-        input_control_file={"fix": f"ensemble all npt temp {temperature} {temperature} 0.1 iso 0.0 0.0 1.0 couple xyz"},
+        input_control_file={
+            "fix": f"ensemble all npt temp {temperature} {temperature} 0.1 iso 0.0 0.0 1.0 couple xyz"
+        },
         lmp_command=lmp_command,
     )
     return structure_from_parsed_output(structure, parsed_output, wrap=True)
 
 
 def npt_solid(
-    temperature: float, 
-    basis: Atoms, 
-    project_parameter: str, 
-    project_path: str, 
-    timestep: float = 1.0, 
-    lmp_command: str ="lmp -in lmp.in",
+    temperature: float,
+    basis: Atoms,
+    project_parameter: dict,
+    project_path: str,
+    timestep: float = 1.0,
+    lmp_command: str = "lmp -in lmp.in",
 ) -> Atoms:
     """
     Calculate NPT ensemble at a given temperature using lammps_file_interface_function.
@@ -171,7 +181,9 @@ def npt_solid(
             "n_ionic_steps": project_parameter["run_time_steps"],
             "seed": project_parameter["seed"],
         },
-        input_control_file={"fix": f"ensemble all npt temp {temperature} {temperature} 0.1 iso 0.0 0.0 1.0 couple xyz"},
+        input_control_file={
+            "fix": f"ensemble all npt temp {temperature} {temperature} 0.1 iso 0.0 0.0 1.0 couple xyz"
+        },
         lmp_command=lmp_command,
     )
     return structure_from_parsed_output(basis, parsed_output, wrap=True)
@@ -184,7 +196,7 @@ def setup_liquid_job(
     project_parameter: dict,
     project_path: str,
     timestep: float = 1.0,
-    lmp_command: str ="lmp -in lmp.in"
+    lmp_command: str = "lmp -in lmp.in",
 ):
     """
     Calculate NPT ensemble at a given temperature while freezing the position of the atoms
@@ -224,13 +236,13 @@ def setup_liquid_job(
 
 
 def npt_liquid(
-    temperature_solid: float, 
+    temperature_solid: float,
     temperature_liquid: float,
     basis: Atoms,
     project_parameter: dict,
-    project_path: str, 
+    project_path: str,
     lmp_command: str = "lmp -in lmp.in",
-    timestep: float = 1.0
+    timestep: float = 1.0,
 ):
     """
     Calculate NPT ensemble at a given temperature while initially freezing the position of the atoms
