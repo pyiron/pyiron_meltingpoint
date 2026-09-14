@@ -17,11 +17,14 @@ def plot_solid_liquid_ratio(
         strain = result.strain
         struct = result.structure.copy()
         struct.wrap()
-        cna = analyse_structure(
-            structure=struct,
-            mode="str",
-            diamond=project_parameter["crystalstructure"].lower() == "diamond",
-        )
+        try:
+            cna = analyse_structure(
+                structure=struct,
+                mode="str",
+                diamond=project_parameter["crystalstructure"].lower() == "diamond",
+            )
+        except RuntimeError:
+            cna = np.array(["OTHER"] * len(struct))
         if not project_parameter["crystalstructure"].lower() == "diamond":
             bcc_count = sum(cna == "BCC")
             fcc_count = sum(cna == "FCC")
