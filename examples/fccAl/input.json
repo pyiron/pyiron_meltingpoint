@@ -3,7 +3,7 @@
         "pair_style eam/fs \n", 
         "pair_coeff * * Al1.eam.fs Al\n"
     ], 
-    "filename": "./examples/fccAl/Al1.eam.fs", 
+    "filename": "Al1.eam.fs", 
     "species": ["Al"], 
     "element": "Al"
 }

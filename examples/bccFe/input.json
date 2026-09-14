@@ -3,7 +3,7 @@
         "pair_style eam/alloy \n", 
         "pair_coeff * * Fe-C-Bec07.eam Fe C\n"
     ], 
-    "filename": "./examples/bccFe/Fe-C-Bec07.eam", 
+    "filename": "Fe-C-Bec07.eam", 
     "species": ["Fe", "C"], 
     "element": "Fe"
 }
