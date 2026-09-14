@@ -112,9 +112,6 @@ jobs:
         - operating-system: ubuntu-latest
           python-version: '3.12'
 
-        - operating-system: ubuntu-latest
-          python-version: '3.11'
-
     steps:
     - uses: actions/checkout@v4
     - uses: conda-incubator/setup-miniconda@v3
