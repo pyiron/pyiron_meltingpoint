@@ -1,7 +1,7 @@
 channels:
 - conda-forge
 dependencies:
-- python=3.14
+- python
 - ase=3.29.0
 - executorlib=1.10.3
 - h5py=3.16.0
