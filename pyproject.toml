@@ -7,6 +7,7 @@ requires = [
     "matplotlib",
     "numpy",
     "pandas",
+    "pyscal3",
     "scikit-learn",
     "structuretoolkit",
 ]
@@ -40,6 +41,7 @@ dependencies = [
     "matplotlib==3.11.1",
     "numpy==2.5.3",
     "pandas==3.0.5",
+    "pyscal3==3.3.2",
     "scikit-learn==1.9.0",
     "structuretoolkit==0.0.46",
 ]
