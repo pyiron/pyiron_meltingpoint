@@ -1,0 +1,37 @@
+# This workflow is used to upload and deploy a new release to PyPi
+# Based on https://github.com/pypa/gh-action-pypi-publish
+
+name: PyPi Release
+
+on:
+    push:
+    pull_request:
+    workflow_dispatch:
+
+jobs:
+  build:
+    if: startsWith(github.event.ref, 'refs/tags') || github.event_name == 'release'
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/interfacemethod
+    permissions:
+      id-token: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: "3.13"
+        miniforge-version: latest
+        channels: conda-forge
+        conda-remove-defaults: "true"
+        environment-file: .github/ci_support/environment-mini.yml
+    - name: Build
+      shell: bash -l {0}
+      run: |
+        cp .github/ci_support/environment-old.yml environment.yml
+        python .github/ci_support/release.py; cat pyproject.toml
+        git update-index --assume-unchanged pyproject.toml src/executorlib/_version.py
+        hatchling build -t sdist -t wheel
+    - name: Publish distribution 📦 to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
