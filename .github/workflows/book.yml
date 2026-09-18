@@ -13,8 +13,8 @@ jobs:
       GPAW_SETUP_PATH: /usr/share/miniconda/share/gpaw
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: conda-incubator/setup-miniconda@v2
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
       with:
         auto-update-conda: true
         python-version: 3.13
