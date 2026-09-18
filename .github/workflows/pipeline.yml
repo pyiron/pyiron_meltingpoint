@@ -72,7 +72,7 @@ jobs:
         miniforge-version: latest
         channels: conda-forge
         conda-remove-defaults: "true"
-        environment-file: environment.yml
+        environment-file: .github/ci_support/environment-mini.yml
     - name: Setup
       shell: bash -l {0}
       run: |
@@ -121,6 +121,46 @@ jobs:
         channels: conda-forge
         conda-remove-defaults: "true"
         environment-file: environment.yml
+    - name: Test
+      shell: bash -l {0}
+      timeout-minutes: 5
+      run: |
+        pip install . --no-deps --no-build-isolation
+        cd tests
+        python -m unittest discover .
+
+  minimal:
+    needs: [black]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: '3.14'
+        miniforge-version: latest
+        channels: conda-forge
+        conda-remove-defaults: "true"
+        environment-file: .github/ci_support/environment-mini.yml
+    - name: Test
+      shell: bash -l {0}
+      timeout-minutes: 5
+      run: |
+        pip install . --no-deps --no-build-isolation
+        cd tests
+        python -m unittest discover .
+
+  unittest-old:
+    needs: [black]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: '3.11'
+        miniforge-version: latest
+        channels: conda-forge
+        conda-remove-defaults: "true"
+        environment-file: .github/ci_support/environment-old.yml
     - name: Test
       shell: bash -l {0}
       timeout-minutes: 5
