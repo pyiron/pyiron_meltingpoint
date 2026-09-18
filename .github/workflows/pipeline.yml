@@ -102,15 +102,19 @@ jobs:
         include:
         - operating-system: macos-latest
           python-version: '3.14'
+          label: osx-64-py-3-14
 
         - operating-system: ubuntu-latest
           python-version: '3.14'
+          label: linux-64-py-3-14
 
         - operating-system: ubuntu-latest
           python-version: '3.13'
+          label: linux-64-py-3-13
 
         - operating-system: ubuntu-latest
           python-version: '3.12'
+          label: linux-64-py-3-12
 
     steps:
     - uses: actions/checkout@v4
@@ -125,9 +129,16 @@ jobs:
       shell: bash -l {0}
       timeout-minutes: 5
       run: |
+        conda install -y coverage
         pip install . --no-deps --no-build-isolation
-        cd tests
-        python -m unittest discover .
+        coverage run
+        coverage report
+        coverage xml
+    - name: Upload coverage reports to Codecov
+      if: matrix.label == 'linux-64-py-3-14'
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
 
   minimal:
     needs: [black]

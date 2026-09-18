@@ -1,14 +1,17 @@
-# Introduction
+# Interface Method
+[![codecov](https://codecov.io/gh/pyiron/pyiron_meltingpoint/graph/badge.svg?token=J2QZCMSUD4)](https://codecov.io/gh/pyiron/pyiron_meltingpoint)
+[![Pipeline](https://github.com/pyiron/pyiron_meltingpoint/actions/workflows/pipeline.yml/badge.svg)](https://github.com/pyiron/pyiron_meltingpoint/actions/workflows/pipeline.yml)
+
 The *Melting* Jupyter notebook allows the fully automated computation of melting points of unary crystals for arbitrary interatomic potentials that are compatible with the molecular dynamics engine [LAMMPS](https://lammps.sandia.gov). It is based on the interface method where the evolution of the solid and the liquid phase are monitored as function of temperature. The only mandatory input parameters required are the chemical element and the interatomic potential file. The melting point protocol itself is implemented in the standalone [`interfacemethod`](https://github.com/pyiron/pyiron_meltingpoint) Python package located in the `src` directory of this repository, the notebook in the `scripts` directory is merely a thin driver around it.
 
 # Different Versions
 The melting point simulation protocol is continously improved based on the feedback from different users. This [repository](https://github.com/pyiron/pyiron_meltingpoint) always includes the latest version, older versions are available as tagged releases.
 
-* **Version 1.0** - This version was originally published in Computational Materials Science. It uses [ovito](https://www.ovito.org) for structure analysis and supports bcc, fcc and hcp structures.
-* **Version 1.1** - Adds support for diamond structures. In addition [pyscal](https://pyscal.org) is used for structure analysis, python 3.9 support is added as well as support for Mac OS X. On windows it is recommended to use the linux subsystem for windows.
-* **Version 1.2** - Fix numpy Version to 1.19.5.
-* **Version 1.3** - Update dependencies to use `pyiron_atomistics` rather than `pyiron`
 * **Version 2.0** - Modern modular software stack: the [pyiron](http://pyiron.org)- and `snakemake`-based workflow is replaced by [`interfacemethod`](https://github.com/pyiron/pyiron_meltingpoint), a lightweight standalone package. LAMMPS is now driven directly via [lammpsparser](https://github.com/pyiron/lammpsparser), structure analysis uses [structuretoolkit](https://github.com/pyiron/structuretoolkit) and parallel as well as HPC queue execution is handled by [executorlib](https://github.com/pyiron/executorlib). The `interfacemethod` package is published on [PyPI](https://pypi.org) and [conda-forge](https://conda-forge.org), so the melting point protocol can now be installed and used without pyiron.
+* **Version 1.3** - Update dependencies to use `pyiron_atomistics` rather than `pyiron`.
+* **Version 1.2** - Fix numpy Version to 1.19.5.
+* **Version 1.1** - Adds support for diamond structures. In addition [pyscal](https://pyscal.org) is used for structure analysis, python 3.9 support is added as well as support for Mac OS X. On windows it is recommended to use the linux subsystem for windows.
+* **Version 1.0** - This version was originally published in Computational Materials Science. It uses [ovito](https://www.ovito.org) for structure analysis and supports bcc, fcc and hcp structures.
 
 # Installation
 `interfacemethod` and all its dependencies - including LAMMPS - are available on conda-forge and are pinned in the [`environment.yml`](environment.yml) file of this repository. There is no separate installation step for the package itself, installing the environment is sufficient to run the notebooks in the `scripts` folder directly.
