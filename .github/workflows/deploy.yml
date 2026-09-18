@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,11 +12,11 @@ jobs:
       CONDA_PREFIX: /usr/share/miniconda/
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: conda-incubator/setup-miniconda@v2
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
       with:
         auto-update-conda: true
-        python-version: 3.8
+        python-version: 3.13
         environment-file: .github/ci_support/environment.yml
         auto-activate-base: false
     - name: Install Jupyterbook
