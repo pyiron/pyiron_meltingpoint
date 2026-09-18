@@ -1,4 +1,4 @@
 channels:
   - conda-forge
 dependencies:
-  - jupyter-book
+  - jupyter-book =1.0.0
