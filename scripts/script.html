@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>From here on the notebook is automated - no change required ! &#8212; pyiron_meltingpoint</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -63,9 +65,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/script';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="plot.html" />
+    <link rel="prev" title="From here on the notebook is automated - no change required !" href="../examples/hcpMg/script.nbconvert.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,6 +76,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -127,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -139,8 +152,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo_dark.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo_dark.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo_dark.png" class="logo__image only-light" alt="pyiron_meltingpoint - Home"/>
+    <script>document.write(`<img src="../_static/logo_dark.png" class="logo__image only-dark" alt="pyiron_meltingpoint - Home"/>`);</script>
   
   
 </a></div>
@@ -317,20 +330,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -376,55 +391,69 @@ document.write(`
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">operator</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span>
 <span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">structuretoolkit</span> <span class="k">as</span> <span class="nn">stk</span>
+<span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">bulk</span>
 <span class="kn">from</span> <span class="nn">ase.data</span> <span class="kn">import</span> <span class="n">reference_states</span><span class="p">,</span> <span class="n">atomic_numbers</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KernelDensity</span>
-<span class="kn">from</span> <span class="nn">pyiron_atomistics</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="kn">from</span> <span class="nn">executorlib</span> <span class="kn">import</span> <span class="n">SingleNodeExecutor</span>
+
+<span class="kn">from</span> <span class="nn">interfacemethod</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">minimize_structure_positions</span><span class="p">,</span>
+    <span class="n">minimize_structure_volume</span><span class="p">,</span>
+    <span class="n">check_diamond</span><span class="p">,</span>
+    <span class="n">analyse_minimized_structure</span><span class="p">,</span>
+    <span class="n">run_npt_step</span><span class="p">,</span>
+    <span class="n">bisection_step</span><span class="p">,</span>
+    <span class="n">initialise_iterators</span><span class="p">,</span>
+    <span class="n">round_temperature_next</span><span class="p">,</span>
+    <span class="n">npt_solid</span><span class="p">,</span>
+    <span class="n">npt_liquid</span><span class="p">,</span>
+    <span class="n">remove_selective_dynamics</span><span class="p">,</span>
+    <span class="n">get_strain_lst</span><span class="p">,</span>
+    <span class="n">run_strain_point</span><span class="p">,</span>
+    <span class="n">plot_solid_liquid_ratio</span><span class="p">,</span>
+    <span class="n">ratio_selection</span><span class="p">,</span>
+    <span class="n">plot_equilibration</span><span class="p">,</span>
+    <span class="n">check_for_holes</span><span class="p">,</span>
+    <span class="n">plot_melting_point_prediction</span><span class="p">,</span>
+    <span class="n">validate_convergence</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;Times New Roman&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;mathtext.fontset&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;stix&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_path</span> <span class="o">=</span> <span class="s2">&quot;melting&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron_atomistics.thermodynamics.interfacemethod</span> <span class="kn">import</span> <span class="n">freeze_one_half</span><span class="p">,</span> <span class="n">remove_selective_dynamics</span><span class="p">,</span> <span class="n">set_server</span><span class="p">,</span> <span class="n">create_job_template</span><span class="p">,</span> <span class="n">fix_iso</span><span class="p">,</span> <span class="n">fix_z_dir</span><span class="p">,</span> <span class="n">half_velocity</span><span class="p">,</span> <span class="n">minimize_pos</span><span class="p">,</span> <span class="n">minimize_vol</span><span class="p">,</span> <span class="n">next_calc</span><span class="p">,</span> <span class="n">npt_solid</span><span class="p">,</span> <span class="n">npt_liquid</span><span class="p">,</span> <span class="n">next_step_funct</span><span class="p">,</span> <span class="n">round_temperature_next</span><span class="p">,</span> <span class="n">strain_circle</span><span class="p">,</span> <span class="n">analyse_minimized_structure</span><span class="p">,</span> <span class="n">get_press</span><span class="p">,</span> <span class="n">get_center_point</span><span class="p">,</span> <span class="n">get_strain_lst</span><span class="p">,</span> <span class="n">get_nve_job_name</span><span class="p">,</span> <span class="n">plot_solid_liquid_ratio</span><span class="p">,</span> <span class="n">ratio_selection</span><span class="p">,</span> <span class="n">plot_equilibration</span><span class="p">,</span> <span class="n">plot_melting_point_prediction</span><span class="p">,</span> <span class="n">calc_temp_iteration</span><span class="p">,</span> <span class="n">get_initial_melting_temperature_guess</span><span class="p">,</span> <span class="n">validate_convergence</span><span class="p">,</span> <span class="n">initialise_iterators</span><span class="p">,</span> <span class="n">get_voronoi_volume</span><span class="p">,</span> <span class="n">check_for_holes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="s1">&#39;input.json&#39;</span>
+<span class="n">output_file</span> <span class="o">=</span> <span class="s1">&#39;output.json&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s1">&#39;melting&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_parameters docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;input.json&#39;</span><span class="p">)</span>
-<span class="n">output_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;output.json&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lmp_command</span> <span class="o">=</span> <span class="s2">&quot;lmp -in lmp.in&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_workers</span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div>
@@ -450,6 +479,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_dict</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">],</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]))</span>
+<span class="n">input_dict</span>
 </pre></div>
 </div>
 </div>
@@ -484,7 +521,6 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;project&#39;</span><span class="p">:</span> <span class="n">pr</span><span class="p">,</span>
     <span class="s1">&#39;run_time_steps&#39;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
     <span class="s1">&#39;nvt_run_time_steps&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
     <span class="s1">&#39;nve_run_time_steps&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
@@ -493,8 +529,7 @@ document.write(`
     <span class="s1">&#39;strain_run_time_steps&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
     <span class="s1">&#39;convergence_criterion&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">&#39;potential&#39;</span><span class="p">:</span> <span class="n">potential</span><span class="p">,</span>
-    <span class="s1">&#39;cpu_cores&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
-    <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span>
+    <span class="s1">&#39;cpu_cores&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">&#39;enable_h5md&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
     <span class="s1">&#39;boundary_value&#39;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
@@ -502,7 +537,8 @@ document.write(`
     <span class="s1">&#39;timestep_lst&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
     <span class="s1">&#39;fit_range_lst&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span>
     <span class="s1">&#39;nve_run_time_steps_lst&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">],</span>
-    <span class="s1">&#39;number_of_atoms&#39;</span><span class="p">:</span> <span class="mi">8000</span><span class="p">,</span> 
+    <span class="s1">&#39;number_of_atoms&#39;</span><span class="p">:</span> <span class="mi">8000</span><span class="p">,</span>
+    <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">56570</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -535,7 +571,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Values from a previous calculation can be inserted here to reproduce the results </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Values from a previous calculation can be inserted here to reproduce the results</span>
 <span class="n">step_dict</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_file</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -548,7 +584,7 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="from-here-on-the-notebook-is-automated-no-change-required">
-<h1>From here on the notebook is automated - no change required !<a class="headerlink" href="#from-here-on-the-notebook-is-automated-no-change-required" title="Permalink to this headline">#</a></h1>
+<h1>From here on the notebook is automated - no change required !<a class="headerlink" href="#from-here-on-the-notebook-is-automated-no-change-required" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">step_count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -561,21 +597,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;project&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;lattice_constant&#39;</span> <span class="ow">in</span> <span class="n">project_parameter</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;lattice_constant&#39;</span><span class="p">]</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">a</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">if</span> <span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;crystalstructure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;hcp&#39;</span><span class="p">:</span>
-    <span class="n">basis</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;element&#39;</span><span class="p">],</span> <span class="n">crystalstructure</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;crystalstructure&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">orthorhombic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;element&#39;</span><span class="p">],</span> <span class="n">crystalstructure</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;crystalstructure&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">orthorhombic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">basis</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;element&#39;</span><span class="p">],</span> <span class="n">crystalstructure</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;crystalstructure&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;element&#39;</span><span class="p">],</span> <span class="n">crystalstructure</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;crystalstructure&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">basis_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">basis</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">)]</span>
 <span class="n">basis</span> <span class="o">=</span> <span class="n">basis_lst</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;number_of_atoms&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">basis_lst</span><span class="p">])]</span>
 </pre></div>
@@ -584,21 +613,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span><span class="o">.</span><span class="n">analyse_ovito_cna_adaptive</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stk</span><span class="o">.</span><span class="n">analyse</span><span class="o">.</span><span class="n">get_adaptive_cna_descriptors</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">ovito_compatibility</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span><span class="o">.</span><span class="n">plot3d</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pr.remove_jobs(recursive=True)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stk</span><span class="o">.</span><span class="n">visualize</span><span class="o">.</span><span class="n">plot3d</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -613,50 +635,170 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-1-set-up-the-solid-sample-and-roughly-estimate-a-melting-point">
-<h1>Step 1: set up the solid sample and roughly estimate a melting point<a class="headerlink" href="#step-1-set-up-the-solid-sample-and-roughly-estimate-a-melting-point" title="Permalink to this headline">#</a></h1>
+<h1>Step 1: set up the solid sample and roughly estimate a melting point<a class="headerlink" href="#step-1-set-up-the-solid-sample-and-roughly-estimate-a-melting-point" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ham_minimize_pos</span><span class="o">=</span> <span class="n">minimize_pos</span><span class="p">(</span>
-    <span class="n">structure</span><span class="o">=</span><span class="n">basis</span><span class="p">,</span> 
-    <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">SingleNodeExecutor</span><span class="p">(</span><span class="n">cache_directory</span><span class="o">=</span><span class="s2">&quot;cache&quot;</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+    <span class="n">basis_minimize_pos</span> <span class="o">=</span> <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+        <span class="n">minimize_structure_positions</span><span class="p">,</span>
+        <span class="n">structure</span><span class="o">=</span><span class="n">basis</span><span class="p">,</span> 
+        <span class="n">potential</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">],</span> 
+        <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+        <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">basis_minimize_vol</span> <span class="o">=</span> <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+        <span class="n">minimize_structure_volume</span><span class="p">,</span>
+        <span class="n">structure</span><span class="o">=</span><span class="n">basis_minimize_pos</span><span class="p">,</span> 
+        <span class="n">potential</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">],</span> 
+        <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+        <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ham_minimize_vol</span> <span class="o">=</span> <span class="n">minimize_vol</span><span class="p">(</span>
-    <span class="n">structure</span><span class="o">=</span><span class="n">ham_minimize_pos</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(),</span> 
-    <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diamond_flag</span> <span class="o">=</span> <span class="n">check_diamond</span><span class="p">(</span><span class="n">structure</span><span class="o">=</span><span class="n">basis_minimize_vol</span><span class="p">)</span>
+<span class="n">diamond_flag</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_next</span><span class="p">,</span> <span class="n">structure_left</span> <span class="o">=</span> <span class="n">get_initial_melting_temperature_guess</span><span class="p">(</span>
-    <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">,</span> 
-    <span class="n">ham_minimize_vol</span><span class="o">=</span><span class="n">ham_minimize_vol</span><span class="p">,</span> 
-    <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">structure_after_minimization</span><span class="p">,</span>
+    <span class="n">key_max</span><span class="p">,</span>
+    <span class="n">number_of_atoms</span><span class="p">,</span>
+    <span class="n">distribution_initial_half</span><span class="p">,</span>
+    <span class="n">_</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="n">analyse_minimized_structure</span><span class="p">(</span><span class="n">structure</span><span class="o">=</span><span class="n">basis_minimize_vol</span><span class="p">)</span>
+<span class="n">structure_after_minimization</span><span class="p">,</span> <span class="n">key_max</span><span class="p">,</span> <span class="n">number_of_atoms</span><span class="p">,</span> <span class="n">distribution_initial_half</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_next</span>   <span class="c1"># +/- 100K </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estimate_melting_temperature_using_bisection_CNA</span><span class="p">(</span>
+    <span class="n">structure</span><span class="p">,</span>
+    <span class="n">potential_dataframe</span><span class="p">,</span>
+    <span class="n">project_path</span><span class="p">,</span>
+    <span class="n">number_of_atoms</span><span class="p">,</span>
+    <span class="n">key_max</span><span class="p">,</span>
+    <span class="n">distribution_initial_half</span><span class="p">,</span>
+    <span class="n">diamond_flag</span><span class="p">,</span>
+    <span class="n">lmp_command</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">temperature_left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">temperature_right</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">run</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+    <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Estimate the melting temperature by bisecting a temperature bracket with NPT MD + CNA:</span>
+
+<span class="sd">    1. Run NPT MD at the upper bound of the bracket.</span>
+<span class="sd">    2. Classify both bracket endpoints as solid- or liquid-dominated (CNA) and narrow the</span>
+<span class="sd">       bracket towards the phase boundary, running one new NPT MD simulation per step.</span>
+<span class="sd">    3. Repeat until the bracket is narrower than 10 K.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">structure_left</span> <span class="o">=</span> <span class="n">structure</span>
+
+    <span class="c1"># Step 1c-i: NPT MD at the initial upper temperature bound</span>
+    <span class="n">structure_right</span> <span class="o">=</span> <span class="n">run_npt_step</span><span class="p">(</span>
+        <span class="n">structure</span><span class="o">=</span><span class="n">structure</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="n">temperature_right</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+        <span class="n">potential</span><span class="o">=</span><span class="n">potential_dataframe</span><span class="p">,</span>
+        <span class="n">run_time_steps</span><span class="o">=</span><span class="n">run</span><span class="p">,</span>
+        <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+        <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">temperature_step</span> <span class="o">=</span> <span class="n">temperature_right</span> <span class="o">-</span> <span class="n">temperature_left</span>
+
+    <span class="c1"># Step 1c-ii: bisect the bracket until it is narrower than 10 K.</span>
+    <span class="c1"># Each iteration decides -- from the CNA analysis of the *previous* iteration&#39;s structures --</span>
+    <span class="c1"># which single new NPT MD run to launch next, so unlike the strain scan in Step 2 this loop</span>
+    <span class="c1"># is inherently sequential and cannot be handed to executor.map(). The parallelizable unit of</span>
+    <span class="c1"># work at this stage of the workflow is a whole bisection search, e.g. running this function</span>
+    <span class="c1"># for several elements, potentials or initial seeds concurrently.</span>
+    <span class="k">with</span> <span class="n">SingleNodeExecutor</span><span class="p">(</span><span class="n">cache_directory</span><span class="o">=</span><span class="s2">&quot;cache&quot;</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">temperature_step</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="p">(</span>
+                <span class="n">structure_left</span><span class="p">,</span>
+                <span class="n">structure_right</span><span class="p">,</span>
+                <span class="n">temperature_left</span><span class="p">,</span>
+                <span class="n">temperature_right</span><span class="p">,</span>
+            <span class="p">)</span> <span class="o">=</span> <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+                <span class="n">bisection_step</span><span class="p">,</span>
+                <span class="n">number_of_atoms</span><span class="o">=</span><span class="n">number_of_atoms</span><span class="p">,</span>
+                <span class="n">key_max</span><span class="o">=</span><span class="n">key_max</span><span class="p">,</span>
+                <span class="n">structure_left</span><span class="o">=</span><span class="n">structure_left</span><span class="p">,</span>
+                <span class="n">structure_right</span><span class="o">=</span><span class="n">structure_right</span><span class="p">,</span>
+                <span class="n">potential</span><span class="o">=</span><span class="n">potential_dataframe</span><span class="p">,</span>
+                <span class="n">temperature_left</span><span class="o">=</span><span class="n">temperature_left</span><span class="p">,</span>
+                <span class="n">temperature_right</span><span class="o">=</span><span class="n">temperature_right</span><span class="p">,</span>
+                <span class="n">distribution_initial_half</span><span class="o">=</span><span class="n">distribution_initial_half</span><span class="p">,</span>
+                <span class="n">structure_after_minimization</span><span class="o">=</span><span class="n">structure</span><span class="p">,</span>
+                <span class="n">run_time_steps</span><span class="o">=</span><span class="n">run</span><span class="p">,</span>
+                <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+                <span class="n">diamond_flag</span><span class="o">=</span><span class="n">diamond_flag</span><span class="p">,</span>
+                <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+                <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+            <span class="n">temperature_step</span> <span class="o">=</span> <span class="n">temperature_right</span> <span class="o">-</span> <span class="n">temperature_left</span>
+
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">temperature_left</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Why this loop is not parallelized.</strong> Each bisection step above launches exactly one new NPT MD
+run, and which temperature it runs at is decided by the CNA classification of the <em>previous</em>
+step’s structures – iteration <em>N</em> cannot start before iteration <em>N-1</em> finishes and is analysed.
+That is different from the strain scan in Step 2, where every strain point starts from the same
+structure and all points can be dispatched at once.</p>
+<p>If you want to use extra compute here, the independent unit of work is a whole bisection search,
+not a single step within one: for example, estimating the melting point for several elements,
+potentials, or random seeds at once is embarrassingly parallel across
+<code class="docutils literal notranslate"><span class="pre">estimate_melting_temperature_using_bisection_CNA()</span></code> calls, and that outer loop could be handed to
+a <code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code>/<code class="docutils literal notranslate"><span class="pre">executorlib.Executor</span></code> the same way the strain scan was.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_next</span> <span class="o">=</span> <span class="n">estimate_melting_temperature_using_bisection_CNA</span><span class="p">(</span>
+    <span class="n">structure</span><span class="o">=</span><span class="n">structure_after_minimization</span><span class="p">,</span>
+    <span class="n">potential_dataframe</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">],</span>
+    <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+    <span class="n">number_of_atoms</span><span class="o">=</span><span class="n">number_of_atoms</span><span class="p">,</span>
+    <span class="n">key_max</span><span class="o">=</span><span class="n">key_max</span><span class="p">,</span>
+    <span class="n">distribution_initial_half</span><span class="o">=</span><span class="n">distribution_initial_half</span><span class="p">,</span>
+    <span class="n">diamond_flag</span><span class="o">=</span><span class="n">diamond_flag</span><span class="p">,</span>
+    <span class="n">temperature_left</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;temperature_left&quot;</span><span class="p">],</span>
+    <span class="n">temperature_right</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;temperature_right&quot;</span><span class="p">],</span>
+    <span class="n">run</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;strain_run_time_steps&quot;</span><span class="p">],</span>
+    <span class="n">seed</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;seed&#39;</span><span class="p">],</span>
+    <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">temperature_next</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">structure_after_minimization</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_next</span>   <span class="c1"># +/- 100K</span>
 </pre></div>
 </div>
 </div>
@@ -665,7 +807,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">step_count</span> <span class="ow">in</span> <span class="n">step_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="n">temperature_next</span> <span class="o">=</span> <span class="n">step_dict</span><span class="p">[</span><span class="n">step_count</span><span class="p">][</span><span class="s1">&#39;temperature_next&#39;</span><span class="p">]</span>
-<span class="k">else</span><span class="p">:</span> 
+<span class="k">else</span><span class="p">:</span>
     <span class="n">step_dict</span><span class="p">[</span><span class="n">step_count</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;temperature_next&#39;</span><span class="p">:</span> <span class="n">temperature_next</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -680,18 +822,158 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-2-set-up-the-interface-structure">
-<h1>Step 2: set up the interface structure<a class="headerlink" href="#step-2-set-up-the-interface-structure" title="Permalink to this headline">#</a></h1>
+<h1>Step 2: set up the interface structure<a class="headerlink" href="#step-2-set-up-the-interface-structure" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_next</span><span class="p">,</span> <span class="n">temperature_mean</span><span class="p">,</span> <span class="n">temperature_left</span><span class="p">,</span> <span class="n">temperature_right</span><span class="p">,</span> <span class="n">strain_result_lst</span><span class="p">,</span> <span class="n">pressure_result_lst</span> <span class="o">=</span> <span class="n">calc_temp_iteration</span><span class="p">(</span>
-        <span class="n">basis</span><span class="o">=</span><span class="n">ham_minimize_vol</span><span class="o">.</span><span class="n">get_structure</span><span class="p">()</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span> 
-        <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_next</span> <span class="o">=</span> <span class="n">round_temperature_next</span><span class="p">(</span><span class="n">temperature_next</span><span class="p">)</span>
+<span class="n">temperature_next</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_interface_iteration</span><span class="p">(</span>
+    <span class="n">basis</span><span class="p">,</span>
+    <span class="n">temperature_next</span><span class="p">,</span>
+    <span class="n">project_parameter</span><span class="p">,</span>
+    <span class="n">project_path</span><span class="p">,</span>
+    <span class="n">timestep</span><span class="p">,</span>
+    <span class="n">nve_run_time_steps</span><span class="p">,</span>
+    <span class="n">fit_range</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">,</span>
+    <span class="n">lmp_command</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">debug_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run one iteration of the solid-liquid interface method and predict the next melting</span>
+<span class="sd">    temperature estimate:</span>
+
+<span class="sd">    1. equilibrate the solid at the target temperature (NPT)</span>
+<span class="sd">    2. partially melt one half of the cell and re-equilibrate to build a solid-liquid interface (NPT)</span>
+<span class="sd">    3. scan a series of strains around the current lattice parameter (NVT + NVE)</span>
+<span class="sd">    4. classify each strain point as solid- or liquid-dominated and keep the coexistence region</span>
+<span class="sd">    5. fit pressure and temperature vs. strain to predict the next melting temperature estimate</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">temperature_next</span> <span class="o">=</span> <span class="n">round_temperature_next</span><span class="p">(</span><span class="n">temperature_next</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">SingleNodeExecutor</span><span class="p">(</span><span class="n">cache_directory</span><span class="o">=</span><span class="s2">&quot;cache&quot;</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+
+        <span class="c1"># Step 2a: equilibrate the solid at the target temperature (NPT)</span>
+        <span class="n">structure_npt_solid</span> <span class="o">=</span> <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+            <span class="n">npt_solid</span><span class="p">,</span>
+            <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span>
+            <span class="n">basis</span><span class="o">=</span><span class="n">basis</span><span class="p">,</span>
+            <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">,</span>
+            <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+            <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+        <span class="n">structure_npt_solid</span><span class="o">.</span><span class="n">set_velocities</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">structure_npt_solid</span><span class="o">.</span><span class="n">get_velocities</span><span class="p">()))</span>
+
+        <span class="c1"># Step 2b: partially melt one half and re-equilibrate to build a solid-liquid interface (NPT)</span>
+        <span class="n">structure_npt_liquid_low</span> <span class="o">=</span> <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+            <span class="n">npt_liquid</span><span class="p">,</span>
+            <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+            <span class="n">temperature_solid</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span>
+            <span class="n">temperature_liquid</span><span class="o">=</span><span class="n">temperature_next</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="n">basis</span><span class="o">=</span><span class="n">structure_npt_solid</span><span class="p">,</span>
+            <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">,</span>
+            <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+            <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+        <span class="n">basis_relative</span> <span class="o">=</span> <span class="n">remove_selective_dynamics</span><span class="p">(</span><span class="n">structure_npt_liquid_low</span><span class="p">)</span>
+
+        <span class="c1"># Step 2c: scan a series of strains around the current lattice parameter (NVT + NVE).</span>
+        <span class="c1"># Every strain point is independent of every other -- this is the parallelization point of</span>
+        <span class="c1"># the workflow. See the note below on replacing this `for` loop with a parallel executor.</span>
+        <span class="n">strain_lst</span> <span class="o">=</span> <span class="n">get_strain_lst</span><span class="p">(</span>
+            <span class="n">fit_range</span><span class="o">=</span><span class="n">fit_range</span><span class="p">,</span> <span class="n">points</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">],</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">strain_futures</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">strain</span> <span class="ow">in</span> <span class="n">strain_lst</span><span class="p">:</span>
+            <span class="n">strain_futures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+                    <span class="n">run_strain_point</span><span class="p">,</span>
+                    <span class="n">strain</span><span class="o">=</span><span class="n">strain</span><span class="p">,</span>
+                    <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+                    <span class="n">basis_relative</span><span class="o">=</span><span class="n">basis_relative</span><span class="p">,</span>
+                    <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span>
+                    <span class="n">nve_run_time_steps</span><span class="o">=</span><span class="n">nve_run_time_steps</span><span class="p">,</span>
+                    <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">,</span>
+                    <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+                    <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="n">strain_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span> <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">strain_futures</span><span class="p">]</span>
+
+    <span class="c1"># Step 2d: classify each strain point as solid- or liquid-dominated</span>
+    <span class="n">ratio_lst</span> <span class="o">=</span> <span class="n">plot_solid_liquid_ratio</span><span class="p">(</span>
+        <span class="n">strain_results</span><span class="o">=</span><span class="n">strain_results</span><span class="p">,</span>
         <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">,</span>
-        <span class="n">timestep</span> <span class="o">=</span> <span class="n">timestep</span><span class="p">,</span>
-        <span class="n">nve_run_time_steps</span><span class="o">=</span><span class="n">nve_run_time_steps</span><span class="p">,</span> 
-        <span class="n">fit_range</span><span class="o">=</span><span class="n">fit_range</span><span class="p">,</span>  
-        <span class="n">center</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">debug_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">debug_plot</span><span class="o">=</span><span class="n">debug_plot</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">selected_results</span><span class="p">,</span> <span class="n">sl_flag</span> <span class="o">=</span> <span class="n">ratio_selection</span><span class="p">(</span>
+        <span class="n">strain_results</span><span class="o">=</span><span class="n">strain_results</span><span class="p">,</span>
+        <span class="n">ratio_lst</span><span class="o">=</span><span class="n">ratio_lst</span><span class="p">,</span>
+        <span class="n">ratio_boundary</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;ratio_boundary&quot;</span><span class="p">],</span>
+        <span class="n">debug_plot</span><span class="o">=</span><span class="n">debug_plot</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Step 2e: fit pressure and temperature vs. strain to predict the next melting temperature</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">selected_results</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">plot_equilibration</span><span class="p">(</span><span class="n">strain_results</span><span class="o">=</span><span class="n">strain_results</span><span class="p">,</span> <span class="n">debug_plot</span><span class="o">=</span><span class="n">debug_plot</span><span class="p">)</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">check_for_holes</span><span class="p">(</span><span class="n">strain_results</span><span class="o">=</span><span class="n">selected_results</span><span class="p">)</span>
+        <span class="n">selected_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">keep</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">selected_results</span><span class="p">,</span> <span class="n">ind</span><span class="p">)</span> <span class="k">if</span> <span class="n">keep</span><span class="p">]</span>
+        <span class="p">(</span>
+            <span class="n">temperature_next</span><span class="p">,</span>
+            <span class="n">temperature_mean</span><span class="p">,</span>
+            <span class="n">temperature_left</span><span class="p">,</span>
+            <span class="n">temperature_right</span><span class="p">,</span>
+        <span class="p">)</span> <span class="o">=</span> <span class="n">plot_melting_point_prediction</span><span class="p">(</span>
+            <span class="n">strain_results</span><span class="o">=</span><span class="n">selected_results</span><span class="p">,</span>
+            <span class="n">boundary_value</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s2">&quot;boundary_value&quot;</span><span class="p">],</span>
+            <span class="n">debug_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">sl_flag</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">temperature_next</span><span class="p">,</span> <span class="n">temperature_mean</span><span class="p">,</span> <span class="n">temperature_left</span><span class="p">,</span> <span class="n">temperature_right</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">temperature_next</span> <span class="o">*</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">temperature_next</span><span class="p">,</span> <span class="n">temperature_mean</span><span class="p">,</span> <span class="n">temperature_left</span><span class="p">,</span> <span class="n">temperature_right</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">temperature_next</span> <span class="o">*</span> <span class="mf">1.10</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="n">strain_result_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">strain</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">selected_results</span><span class="p">]</span>
+    <span class="n">pressure_result_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">pressure</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">selected_results</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">temperature_next</span><span class="p">,</span>
+        <span class="n">temperature_mean</span><span class="p">,</span>
+        <span class="n">temperature_left</span><span class="p">,</span>
+        <span class="n">temperature_right</span><span class="p">,</span>
+        <span class="n">strain_result_lst</span><span class="p">,</span>
+        <span class="n">pressure_result_lst</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_next</span><span class="p">,</span> <span class="n">temperature_mean</span><span class="p">,</span> <span class="n">temperature_left</span><span class="p">,</span> <span class="n">temperature_right</span><span class="p">,</span> <span class="n">strain_result_lst</span><span class="p">,</span> <span class="n">pressure_result_lst</span> <span class="o">=</span> <span class="n">run_interface_iteration</span><span class="p">(</span>
+    <span class="n">basis</span><span class="o">=</span><span class="n">basis_minimize_vol</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span>
+    <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span>
+    <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">,</span>
+    <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+    <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
+    <span class="n">nve_run_time_steps</span><span class="o">=</span><span class="n">nve_run_time_steps</span><span class="p">,</span>
+    <span class="n">fit_range</span><span class="o">=</span><span class="n">fit_range</span><span class="p">,</span>
+    <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+    <span class="n">center</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">debug_plot</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -705,11 +987,10 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-3-run-nvt-and-nve-md">
-<h1>Step 3: run NVT and NVE MD<a class="headerlink" href="#step-3-run-nvt-and-nve-md" title="Permalink to this headline">#</a></h1>
+<h1>Step 3: run NVT and NVE MD<a class="headerlink" href="#step-3-run-nvt-and-nve-md" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">validate_convergence</span><span class="p">(</span>
-    <span class="n">pr</span><span class="o">=</span><span class="n">pr</span><span class="p">,</span>
     <span class="n">temperature_left</span><span class="o">=</span><span class="n">temperature_left</span><span class="p">,</span>
     <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span>
     <span class="n">temperature_right</span><span class="o">=</span><span class="n">temperature_right</span><span class="p">,</span>
@@ -753,44 +1034,48 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-4-full-cycle-predict-the-final-melting-point">
-<h1>Step 4: full cycle, predict the final melting point<a class="headerlink" href="#step-4-full-cycle-predict-the-final-melting-point" title="Permalink to this headline">#</a></h1>
+<h1>Step 4: full cycle, predict the final melting point<a class="headerlink" href="#step-4-full-cycle-predict-the-final-melting-point" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_estimate_lst</span><span class="p">,</span> <span class="n">temperature_calculated_lst</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
 <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperature_calculated_lst</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">convergence_goal_achieved</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperature_calculated_lst</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
     <span class="n">temperature_estimate_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperature_next</span><span class="p">)</span>
-    <span class="n">temperature_next</span><span class="p">,</span> <span class="n">temperature_mean</span><span class="p">,</span> <span class="n">temperature_left</span><span class="p">,</span> <span class="n">temperature_right</span><span class="p">,</span> <span class="n">strain_result_lst</span><span class="p">,</span> <span class="n">pressure_result_lst</span> <span class="o">=</span> <span class="n">calc_temp_iteration</span><span class="p">(</span>
-        <span class="n">basis</span><span class="o">=</span><span class="n">ham_minimize_vol</span><span class="o">.</span><span class="n">get_structure</span><span class="p">()</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span> 
-        <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span> 
+    <span class="n">temperature_next</span><span class="p">,</span> <span class="n">temperature_mean</span><span class="p">,</span> <span class="n">temperature_left</span><span class="p">,</span> <span class="n">temperature_right</span><span class="p">,</span> <span class="n">strain_result_lst</span><span class="p">,</span> <span class="n">pressure_result_lst</span> <span class="o">=</span> <span class="n">run_interface_iteration</span><span class="p">(</span>
+        <span class="n">basis</span><span class="o">=</span><span class="n">basis_minimize_vol</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span>
+        <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span>
         <span class="n">project_parameter</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">,</span>
+        <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
         <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
-        <span class="n">nve_run_time_steps</span><span class="o">=</span><span class="n">nve_run_time_steps</span><span class="p">,</span> 
-        <span class="n">fit_range</span><span class="o">=</span><span class="n">fit_range</span><span class="p">,</span>  
+        <span class="n">nve_run_time_steps</span><span class="o">=</span><span class="n">nve_run_time_steps</span><span class="p">,</span>
+        <span class="n">fit_range</span><span class="o">=</span><span class="n">fit_range</span><span class="p">,</span>
         <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span>
-        <span class="n">debug_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">debug_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">lmp_command</span><span class="o">=</span><span class="n">lmp_command</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">temperature_next</span><span class="p">,</span> <span class="n">temperature_mean</span><span class="p">,</span> <span class="n">temperature_left</span><span class="p">,</span> <span class="n">temperature_right</span><span class="p">)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">validate_convergence</span><span class="p">(</span><span class="n">pr</span><span class="o">=</span><span class="n">pr</span><span class="p">,</span>
-                                  <span class="n">temperature_left</span><span class="o">=</span><span class="n">temperature_left</span><span class="p">,</span> 
-                                  <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span> 
-                                  <span class="n">temperature_right</span><span class="o">=</span><span class="n">temperature_right</span><span class="p">,</span> 
-                                  <span class="n">enable_iteration</span><span class="o">=</span><span class="n">enable_iteration</span><span class="p">,</span>
-                                  <span class="n">timestep_iter</span><span class="o">=</span><span class="n">timestep_iter</span><span class="p">,</span>
-                                  <span class="n">timestep_lst</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;timestep_lst&#39;</span><span class="p">],</span>
-                                  <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
-                                  <span class="n">fit_range_iter</span><span class="o">=</span><span class="n">fit_range_iter</span><span class="p">,</span> 
-                                  <span class="n">fit_range_lst</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;fit_range_lst&#39;</span><span class="p">],</span> 
-                                  <span class="n">fit_range</span><span class="o">=</span><span class="n">fit_range</span><span class="p">,</span> 
-                                  <span class="n">nve_run_time_steps_iter</span><span class="o">=</span><span class="n">nve_run_time_steps_iter</span><span class="p">,</span> 
-                                  <span class="n">nve_run_time_steps_lst</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;nve_run_time_steps_lst&#39;</span><span class="p">],</span> 
-                                  <span class="n">nve_run_time_steps</span><span class="o">=</span><span class="n">nve_run_time_steps</span><span class="p">,</span>
-                                  <span class="n">strain_result_lst</span><span class="o">=</span><span class="n">strain_result_lst</span><span class="p">,</span> 
-                                  <span class="n">pressure_result_lst</span><span class="o">=</span><span class="n">pressure_result_lst</span><span class="p">,</span> 
-                                  <span class="n">step_count</span><span class="o">=</span><span class="n">step_count</span><span class="p">,</span> 
-                                  <span class="n">step_dict</span><span class="o">=</span><span class="n">step_dict</span><span class="p">,</span> 
-                                  <span class="n">boundary_value</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;boundary_value&#39;</span><span class="p">],</span> 
-                                  <span class="n">ratio_boundary</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;ratio_boundary&#39;</span><span class="p">],</span>
-                                  <span class="n">convergence_goal</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;convergence_criterion&#39;</span><span class="p">],</span>
-                                  <span class="n">output_file</span><span class="o">=</span><span class="n">output_file</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">validate_convergence</span><span class="p">(</span>
+        <span class="n">temperature_left</span><span class="o">=</span><span class="n">temperature_left</span><span class="p">,</span>
+        <span class="n">temperature_next</span><span class="o">=</span><span class="n">temperature_next</span><span class="p">,</span>
+        <span class="n">temperature_right</span><span class="o">=</span><span class="n">temperature_right</span><span class="p">,</span>
+        <span class="n">enable_iteration</span><span class="o">=</span><span class="n">enable_iteration</span><span class="p">,</span>
+        <span class="n">timestep_iter</span><span class="o">=</span><span class="n">timestep_iter</span><span class="p">,</span>
+        <span class="n">timestep_lst</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;timestep_lst&#39;</span><span class="p">],</span>
+        <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
+        <span class="n">fit_range_iter</span><span class="o">=</span><span class="n">fit_range_iter</span><span class="p">,</span>
+        <span class="n">fit_range_lst</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;fit_range_lst&#39;</span><span class="p">],</span>
+        <span class="n">fit_range</span><span class="o">=</span><span class="n">fit_range</span><span class="p">,</span>
+        <span class="n">nve_run_time_steps_iter</span><span class="o">=</span><span class="n">nve_run_time_steps_iter</span><span class="p">,</span>
+        <span class="n">nve_run_time_steps_lst</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;nve_run_time_steps_lst&#39;</span><span class="p">],</span>
+        <span class="n">nve_run_time_steps</span><span class="o">=</span><span class="n">nve_run_time_steps</span><span class="p">,</span>
+        <span class="n">strain_result_lst</span><span class="o">=</span><span class="n">strain_result_lst</span><span class="p">,</span>
+        <span class="n">pressure_result_lst</span><span class="o">=</span><span class="n">pressure_result_lst</span><span class="p">,</span>
+        <span class="n">step_count</span><span class="o">=</span><span class="n">step_count</span><span class="p">,</span>
+        <span class="n">step_dict</span><span class="o">=</span><span class="n">step_dict</span><span class="p">,</span>
+        <span class="n">boundary_value</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;boundary_value&#39;</span><span class="p">],</span>
+        <span class="n">ratio_boundary</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;ratio_boundary&#39;</span><span class="p">],</span>
+        <span class="n">convergence_goal</span><span class="o">=</span><span class="n">project_parameter</span><span class="p">[</span><span class="s1">&#39;convergence_criterion&#39;</span><span class="p">],</span>
+        <span class="n">output_file</span><span class="o">=</span><span class="n">output_file</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="n">convergence_goal_achieved</span><span class="p">,</span> <span class="n">enable_iteration</span><span class="p">,</span> <span class="n">step_count</span><span class="p">,</span> <span class="n">step_dict</span><span class="p">,</span> <span class="n">timestep</span><span class="p">,</span> <span class="n">fit_range</span><span class="p">,</span> <span class="n">nve_run_time_steps</span><span class="p">,</span> <span class="n">boundary_value</span><span class="p">,</span> <span class="n">ratio_boundary</span><span class="p">,</span> <span class="n">temperature_next</span><span class="p">,</span> <span class="n">center</span> <span class="o">=</span> <span class="n">output</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">step_dict</span><span class="p">[</span><span class="n">step_count</span><span class="p">])</span>
     <span class="n">temperature_calculated_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperature_next</span><span class="p">)</span>
@@ -833,8 +1118,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">step_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -866,25 +1151,21 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="plot.html"
+       href="../examples/hcpMg/script.nbconvert.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">From here on the notebook is automated - no change required !</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -926,6 +1207,7 @@ By pyiron
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -952,8 +1234,8 @@ By pyiron
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
