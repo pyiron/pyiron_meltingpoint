@@ -1,7 +1,6 @@
 # Interface Method
 [![codecov](https://codecov.io/gh/pyiron/pyiron_meltingpoint/graph/badge.svg?token=J2QZCMSUD4)](https://codecov.io/gh/pyiron/pyiron_meltingpoint)
 [![Pipeline](https://github.com/pyiron/pyiron_meltingpoint/actions/workflows/pipeline.yml/badge.svg)](https://github.com/pyiron/pyiron_meltingpoint/actions/workflows/pipeline.yml)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyiron/pyiron_meltingpoint/HEAD)
 
 The *Melting* Jupyter notebook allows the fully automated computation of melting points of unary crystals for arbitrary interatomic potentials that are compatible with the molecular dynamics engine [LAMMPS](https://lammps.sandia.gov). It is based on the interface method where the evolution of the solid and the liquid phase are monitored as function of temperature. The only mandatory input parameters required are the chemical element and the interatomic potential file. The melting point protocol itself is implemented in the standalone [`interfacemethod`](https://github.com/pyiron/pyiron_meltingpoint) Python package located in the `src` directory of this repository, the notebook in the `scripts` directory is merely a thin driver around it.
 
