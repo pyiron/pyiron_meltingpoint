@@ -1,101 +1,76 @@
 # Introduction
-The [pyiron](http://pyiron.org) based module and Jupyter Notebook *Melting* allow the fully automated computation of melting points of unary crystals for arbitrary interatomic potentials that are compatible with the molecular dynamics engine [LAMMPS](https://lammps.sandia.gov). It is based on the interface method where the evolution of the solid and the liquid phase are monitored as function of temperature. The only mandatory input parameters required are the chemical element and the interatomic potential file. 
+The *Melting* Jupyter notebook allows the fully automated computation of melting points of unary crystals for arbitrary interatomic potentials that are compatible with the molecular dynamics engine [LAMMPS](https://lammps.sandia.gov). It is based on the interface method where the evolution of the solid and the liquid phase are monitored as function of temperature. The only mandatory input parameters required are the chemical element and the interatomic potential file. The melting point protocol itself is implemented in the standalone [`interfacemethod`](https://github.com/pyiron/pyiron_meltingpoint) Python package located in the `src` directory of this repository, the notebook in the `scripts` directory is merely a thin driver around it.
 
-# Different Versions 
-The melting point simulation protocol is continously improved based on the feedback from different users. This [repository](https://github.com/pyiron/pyiron_meltingpoint) always includes the latest version, older versions are available as tagged releases. 
+# Different Versions
+The melting point simulation protocol is continously improved based on the feedback from different users. This [repository](https://github.com/pyiron/pyiron_meltingpoint) always includes the latest version, older versions are available as tagged releases.
 
-* **Version 1.0** - This version was originally published in Computational Materials Science. It uses [ovito](https://www.ovito.org) for structure analysis and supports bcc, fcc and hcp structures. 
-* **Version 1.1** - Adds support for diamond structures. In addition [pyscal](https://pyscal.org) is used for structure analysis, python 3.9 support is added as well as support for Mac OS X. On windows it is recommended to use the linux subsystem for windows. 
+* **Version 1.0** - This version was originally published in Computational Materials Science. It uses [ovito](https://www.ovito.org) for structure analysis and supports bcc, fcc and hcp structures.
+* **Version 1.1** - Adds support for diamond structures. In addition [pyscal](https://pyscal.org) is used for structure analysis, python 3.9 support is added as well as support for Mac OS X. On windows it is recommended to use the linux subsystem for windows.
 * **Version 1.2** - Fix numpy Version to 1.19.5.
 * **Version 1.3** - Update dependencies to use `pyiron_atomistics` rather than `pyiron`
+* **Version 2.0** - Modern modular software stack: the [pyiron](http://pyiron.org)- and `snakemake`-based workflow is replaced by [`interfacemethod`](https://github.com/pyiron/pyiron_meltingpoint), a lightweight standalone package. LAMMPS is now driven directly via [lammpsparser](https://github.com/pyiron/lammpsparser), structure analysis uses [structuretoolkit](https://github.com/pyiron/structuretoolkit) and parallel as well as HPC queue execution is handled by [executorlib](https://github.com/pyiron/executorlib). The `interfacemethod` package is published on [PyPI](https://pypi.org) and [conda-forge](https://conda-forge.org), so the melting point protocol can now be installed and used without pyiron.
 
-# Use the melting point method in pyiron
-[pyiron](http://pyiron.org) is an integrated development environment (IDE) for computational materials science. It was used to develop the melting point protocol and is designed for the development of complex simulation protocols in general. If you are already a pyiron user or want to understand the detailed steps of the melting point method we recommend using the melting point protocol with pyiron. If you are only interested in the calculated melting point values, the snakemake approach explained below might be more suitable for you. Both approaches are limited to unix operation systems and have been successfully tested with the linux subsystem for windows. 
+# Installation
+`interfacemethod` and all its dependencies - including LAMMPS - are available on conda-forge and are pinned in the [`environment.yml`](environment.yml) file of this repository. There is no separate installation step for the package itself, installing the environment is sufficient to run the notebooks in the `scripts` folder directly.
 
-## Installation 
-Please install the following packages: 
-
-- [pyiron_atomistics](http://pyiron.org)
-- [pyscal](https://pyscal.org)
-- [Lammps](https://lammps.sandia.gov)
-
-All packages are available via conda-forge and can be installed with the following command: 
+Either create a new, dedicated environment (the `environment.yml` file does not set a name, so pick one with `-n`):
 ```
-conda install -c conda-forge pyiron_atomistics nglview lammps jupyter_client scikit-learn pyscal mscorefonts
+conda env create -n pyiron_meltingpoint -f environment.yml
+conda activate pyiron_meltingpoint
 ```
+or install the dependencies into an environment you already have activated:
+```
+conda env update -f environment.yml
+```
+`interfacemethod` is also available on PyPI (`pip install interfacemethod`), but LAMMPS itself and a number of the other dependencies are not pure Python packages, so installing via conda/`environment.yml` is the recommended and tested way to get a working setup.
 
-For the installation of pyiron and the configuration of Lammps and NGLview within pyiron please refer to the [pyiron manual](https://pyiron.readthedocs.io/en/latest/source/installation.html).
+This repository is developed and continuously tested primarily on Linux, in addition the unit tests are also tested on macOS; Windows users are recommended to use the Linux subsystem for Windows (WSL).
 
 ## Run the Jupyter Notebook
-You can directly download the Jupyter notebook from this Github repositorry [*script.ipynb*](https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/script.ipynb) copy it to your pyiron projects folder and execute it there. In line 10 and 11 the input parameters can be modified to select a custom potential and change parameters of the melting point calculation. After the calculation finished successfully it creates an *output.json* file which contains the final melting point prediction as well as the intermediate results. 
+The melting point protocol is executed from [*script.ipynb*](scripts/script.ipynb). Copy the notebook to the directory you want to run the calculation in - typically next to an `input.json` file and the corresponding potential file, for example one of the [examples](examples) discussed below - and start Jupyter there.
 
-## Analyse 
-You can analyse the melting point calculation using the [*plot.ipynb*](https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/plot.ipynb) notebook. 
+The first cells of the notebook define the calculation:
+* `project_path` - working directory the individual LAMMPS calculations are executed in.
+* `input_file` / `output_file` - the `input.json` file the calculation is loaded from (if it exists) and the `output.json` file the final melting point prediction as well as the intermediate results are written to.
+* `lmp_command` - the command used to call LAMMPS, by default `lmp -in lmp.in`. To parallelise the individual LAMMPS calls with MPI prefix it accordingly, e.g. `mpirun -n 4 lmp -in lmp.in`.
+* `max_workers` - the number of LAMMPS calculations [executorlib](https://github.com/pyiron/executorlib) is allowed to run concurrently on the local machine.
+* `project_parameter` - the numerical settings of the melting point protocol (number of atoms, run lengths, convergence criteria, ...) together with default values which can be overwritten via the `input.json` file.
 
-# Use the melting point method with snakemake 
-In contrast to the pyiron approach snakemake drastically reduces the number of input parameters available to the user. Snakemake handles the setup of pyiron and the installation of the dependencies via conda. This method is recommended for high throughput calculation as well as automated validation of interatomic potentials. Still it might also be sufficient for users who just want to calculate the melting point for a given interatomic potential. Both approaches are limited to the linux operation system and have been successfully tested with the linux subsystem for windows. 
-
-Start with installing snakemake from conda: 
-```
-conda install -c bioconda -c conda-forge snakemake=5.30
-```
-
-Copy one of the *input.json* files from the examples to the root of this directory: 
-```
-cp examples/bccFe/input.json .
-```
-
-The content of the *input.json* is: 
-```
+The content of the `input.json` file is:
+```json
 {
     "config": [
-        "pair_style eam/alloy \n", 
+        "pair_style eam/alloy \n",
         "pair_coeff * * Fe-C-Bec07.eam Fe C\n"
-    ], 
-    "filename": "./examples/bccFe/Fe-C-Bec07.eam", 
-    "species": ["Fe", "C"], 
+    ],
+    "filename": "Fe-C-Bec07.eam",
+    "species": ["Fe", "C"],
     "element": "Fe"
 }
 ```
-After copying the *input.json* it can be executed using: 
+All remaining cells of the notebook - marked with *"From here on the notebook is automated - no change required"* - execute the interface method fully automatically: an initial melting temperature bracket is estimated, a solid-liquid interface is built and iterated on, and the iteration is repeated until the convergence criterion is reached or a maximum number of iterations is exceeded. The `output.json` file is updated after every step, so an interrupted calculation can be continued by simply rerunning the notebook in the same directory. The last cells of the notebook plot the convergence of the predicted melting temperature over the iterations, no separate analysis notebook is required any more.
+
+## Examples
+The [examples](examples) directory contains ready to use `input.json` files and interatomic potentials for a bcc ([Fe](examples/bccFe)), fcc ([Al](examples/fccAl)), hcp ([Mg](examples/hcpMg)) and diamond ([Si](examples/diaSi)) structure, together with a short `README.md` describing the source of each potential. To run one of them, copy `scripts/script.ipynb` into the corresponding example folder and start Jupyter there, so the relative paths in `input.json` resolve correctly:
 ```
-snakemake --use-conda --cores 1 
+cp scripts/script.ipynb examples/bccFe/
+cd examples/bccFe
+jupyter notebook script.ipynb
 ```
-The parameters defined in the *input.json* file will overwrite those in the Jupyter notebook. With this approach, there is no need to interfere with all the computational and technical details. 
-    
-The results are saved in the *output.json* file and can be analysed with the [*plot.ipynb*](https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/plot.ipynb) notebook. 
 
 # FAQ
-## How to run in parallel? 
-A single melting point calculation takes 50-100 CPU hours, so it makes a lot of sense to run the code in parallel. While the protocol itself is written in a serial way, the individual Lammps calculation can be executed in parallel. To enable parallel execution inset the option: 
-```
-"cpu_cores": 8,
-```
-Either in line 10 of the jupyter notebook or in the *input.json* file. When snakemake is used it is not necessary to increase the `--cores` count in the snakemake command. 
+## How to run in parallel?
+A single melting point calculation takes 50-100 CPU hours, so it makes a lot of sense to run the code in parallel. There are two independent levers:
+* `max_workers` in the notebook controls how many LAMMPS calculations [executorlib](https://github.com/pyiron/executorlib)'s `SingleNodeExecutor` is allowed to dispatch concurrently, e.g. the individual strain points of the interface method are embarrassingly parallel and are submitted at once.
+* `lmp_command` controls how each individual LAMMPS call itself is parallelised, e.g. set it to `"mpirun -n 4 lmp -in lmp.in"` to run every LAMMPS calculation on 4 MPI ranks.
 
-## How to submit a melting point calculation to the queue? 
-If you execute the notebook in pyiron, you can simply specify the queue in line 10 by adding the option: 
-```
-"queue": <queue_name>,
-```
-With `<queue_name>` the name of the queue the calculation should be submitted to. More details about the queuing system configuration in pyiron is available as part of the [pysqa](https://github.com/pyiron/pysqa) package.
-
-In contrast the `snakemake` command can be directly included in the submit script you usually use to submit calculation to your cluster. Here is an example submit script for the SLURM queuing system: 
-```
-#!/bin/sh
-#SBATCH --time=00:10:00
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
-#SBATCH --job-name="melting_point"
-
-snakemake --use-conda --cores 1 
-```
-In addition to specifying the number of cores in the submit script it is also necessary to set the `cpu_cores` option in the *input.json* file as explained above. 
+## How to submit a melting point calculation to an HPC queue?
+[executorlib](https://github.com/pyiron/executorlib) also provides cluster executors which submit each task as its own job to a queuing system instead of running it on the local machine. Replace `executorlib.SingleNodeExecutor` in the notebook with `executorlib.SlurmClusterExecutor` (for SLURM) or `executorlib.FluxClusterExecutor` (for the [flux](https://flux-framework.org) framework) to submit every LAMMPS run individually to the queue, including the requested number of cores per task via the `resource_dict` argument. See the [executorlib documentation](https://github.com/pyiron/executorlib) for the full list of available executors and their configuration options.
 
 # Acknowledgments
 If you use the melting point protocol in your scientific work, please consider citing:
 ```
-  @article{melting-paper,
+  @article{melting,
     title = {A fully automated approach to calculate the melting temperature of elemental crystals},
     journal = {Computational Materials Science}
     volume = {187},
@@ -107,7 +82,7 @@ If you use the melting point protocol in your scientific work, please consider c
     keywords = {Interface method, Melting point, Arbitrary potential, pyiron},
   }
 
-  @article{pyiron-paper,
+  @article{pyiron,
     title = {pyiron: An integrated development environment for computational materials science},
     journal = {Computational Materials Science},
     volume = {163},
@@ -130,5 +105,19 @@ If you use the melting point protocol in your scientific work, please consider c
     volume = {4},
     number = {43},
     page = {1824}
+  }
+
+  @article{executorlib,
+    title = {Executorlib -- Up-scaling Python workflows for hierarchical heterogenous high-performance computing},
+    journal = {Journal of Open Source Software},
+    volume = {10},
+    number = {108},
+    pages = {7782},
+    year = {2025},
+    issn = {2475-9066},
+    doi = {10.21105/joss.07782},
+    url = {https://joss.theoj.org/papers/10.21105/joss.07782},
+    author = {Jan Janssen and Michael Gilbert Taylor and Ping Yang and Joerg Neugebauer and Danny Perez},
+    keywords = {High-performance computing, Workflow management, Python},
   }
 ```
