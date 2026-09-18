@@ -1,0 +1,20 @@
+channels:
+- conda-forge
+dependencies:
+- python
+- ase=3.29.0
+- executorlib=1.10.3
+- h5py=3.16.0
+- hatchling=1.32.0
+- hatch-vcs=0.5.0
+- lammpsparser=0.0.9
+- lammps=2024.08.29
+- matplotlib-base=3.11.1
+- nglview=3.1.4
+- numpy=2.5.3
+- pandas=3.0.5
+- pyscal3=3.3.2
+- scikit-learn=1.9.0
+- setuptools=79.0.1
+- structuretoolkit=0.0.46
+

@@ -1,9 +1,8 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -15,59 +14,61 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="From here on the notebook is automated - no change required !" href="examples/bccFe/script.nbconvert.html" />
+    <link rel="next" title="Iron - bcc" href="examples/bccFe/script.nbconvert.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,32 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -108,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -116,16 +100,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="#">
   
@@ -153,11 +150,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/logo_dark.png" class="logo__image only-light" alt="pyiron_meltingpoint - Home"/>
-    <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="pyiron_meltingpoint - Home"/>`);</script>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="pyiron_meltingpoint - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -168,27 +172,32 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="examples/bccFe/script.nbconvert.html">From here on the notebook is automated - no change required !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/bccFe/script.nbconvert.html">Iron - bcc</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="examples/diaSi/script.nbconvert.html">From here on the notebook is automated - no change required !</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="examples/diaSi/script.nbconvert.html">Silicon - diamond</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="examples/fccAl/script.nbconvert.html">From here on the notebook is automated - no change required !</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="examples/fccAl/script.nbconvert.html">Aluminium - fcc</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="examples/hcpMg/script.nbconvert.html">From here on the notebook is automated - no change required !</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="examples/hcpMg/script.nbconvert.html">Magnesium - hcp</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="scripts/script.html">From here on the notebook is automated - no change required !</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="scripts/script.html">Melting point protocol</a></li>
+
 
 
 
@@ -201,14 +210,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -217,14 +231,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -286,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -300,27 +314,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -343,16 +349,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#different-versions">Different Versions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-melting-point-method-in-pyiron">Use the melting point method in pyiron</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-jupyter-notebook">Run the Jupyter Notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse">Analyse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-melting-point-method-with-snakemake">Use the melting point method with snakemake</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-in-parallel">How to run in parallel?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit-a-melting-point-calculation-to-the-queue">How to submit a melting point calculation to the queue?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit-a-melting-point-calculation-to-an-hpc-queue">How to submit a melting point calculation to an HPC queue?</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
@@ -366,112 +370,91 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<p>The <a class="reference external" href="http://pyiron.org">pyiron</a> based module and Jupyter Notebook <em>Melting</em> allow the fully automated computation of melting points of unary crystals for arbitrary interatomic potentials that are compatible with the molecular dynamics engine <a class="reference external" href="https://lammps.sandia.gov">LAMMPS</a>. It is based on the interface method where the evolution of the solid and the liquid phase are monitored as function of temperature. The only mandatory input parameters required are the chemical element and the interatomic potential file.</p>
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>The <em>Melting</em> Jupyter notebook allows the fully automated computation of melting points of unary crystals for arbitrary interatomic potentials that are compatible with the molecular dynamics engine <a class="reference external" href="https://lammps.sandia.gov">LAMMPS</a>. It is based on the interface method where the evolution of the solid and the liquid phase are monitored as function of temperature. The only mandatory input parameters required are the chemical element and the interatomic potential file. The melting point protocol itself is implemented in the standalone <a class="reference external" href="https://github.com/pyiron/pyiron_meltingpoint"><code class="docutils literal notranslate"><span class="pre">interfacemethod</span></code></a> Python package located in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory of this repository, the notebook in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> directory is merely a thin driver around it.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="different-versions">
-<h1>Different Versions<a class="headerlink" href="#different-versions" title="Permalink to this heading">#</a></h1>
+<h1>Different Versions<a class="headerlink" href="#different-versions" title="Link to this heading">#</a></h1>
 <p>The melting point simulation protocol is continously improved based on the feedback from different users. This <a class="reference external" href="https://github.com/pyiron/pyiron_meltingpoint">repository</a> always includes the latest version, older versions are available as tagged releases.</p>
 <ul class="simple">
 <li><p><strong>Version 1.0</strong> - This version was originally published in Computational Materials Science. It uses <a class="reference external" href="https://www.ovito.org">ovito</a> for structure analysis and supports bcc, fcc and hcp structures.</p></li>
 <li><p><strong>Version 1.1</strong> - Adds support for diamond structures. In addition <a class="reference external" href="https://pyscal.org">pyscal</a> is used for structure analysis, python 3.9 support is added as well as support for Mac OS X. On windows it is recommended to use the linux subsystem for windows.</p></li>
 <li><p><strong>Version 1.2</strong> - Fix numpy Version to 1.19.5.</p></li>
 <li><p><strong>Version 1.3</strong> - Update dependencies to use <code class="docutils literal notranslate"><span class="pre">pyiron_atomistics</span></code> rather than <code class="docutils literal notranslate"><span class="pre">pyiron</span></code></p></li>
+<li><p><strong>Version 2.0</strong> - Modern modular software stack: the <a class="reference external" href="http://pyiron.org">pyiron</a>- and <code class="docutils literal notranslate"><span class="pre">snakemake</span></code>-based workflow is replaced by <a class="reference external" href="https://github.com/pyiron/pyiron_meltingpoint"><code class="docutils literal notranslate"><span class="pre">interfacemethod</span></code></a>, a lightweight standalone package. LAMMPS is now driven directly via <a class="reference external" href="https://github.com/pyiron/lammpsparser">lammpsparser</a>, structure analysis uses <a class="reference external" href="https://github.com/pyiron/structuretoolkit">structuretoolkit</a> and parallel as well as HPC queue execution is handled by <a class="reference external" href="https://github.com/pyiron/executorlib">executorlib</a>. The <code class="docutils literal notranslate"><span class="pre">interfacemethod</span></code> package is published on <a class="reference external" href="https://pypi.org">PyPI</a> and <a class="reference external" href="https://conda-forge.org">conda-forge</a>, so the melting point protocol can now be installed and used without pyiron.</p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="use-the-melting-point-method-in-pyiron">
-<h1>Use the melting point method in pyiron<a class="headerlink" href="#use-the-melting-point-method-in-pyiron" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="http://pyiron.org">pyiron</a> is an integrated development environment (IDE) for computational materials science. It was used to develop the melting point protocol and is designed for the development of complex simulation protocols in general. If you are already a pyiron user or want to understand the detailed steps of the melting point method we recommend using the melting point protocol with pyiron. If you are only interested in the calculated melting point values, the snakemake approach explained below might be more suitable for you. Both approaches are limited to unix operation systems and have been successfully tested with the linux subsystem for windows.</p>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
-<p>Please install the following packages:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="http://pyiron.org">pyiron_atomistics</a></p></li>
-<li><p><a class="reference external" href="https://pyscal.org">pyscal</a></p></li>
-<li><p><a class="reference external" href="https://lammps.sandia.gov">Lammps</a></p></li>
-</ul>
-<p>All packages are available via conda-forge and can be installed with the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pyiron_atomistics</span> <span class="n">nglview</span> <span class="n">lammps</span> <span class="n">jupyter_client</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">pyscal</span> <span class="n">mscorefonts</span>
+<section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">interfacemethod</span></code> and all its dependencies - including LAMMPS - are available on conda-forge and are pinned in the <a class="reference download internal" download="" href="_downloads/b7cb75ca59993a879e29bed8cd8469b8/environment.yml"><span class="xref download myst"><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></span></a> file of this repository. There is no separate installation step for the package itself, installing the environment is sufficient to run the notebooks in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> folder directly.</p>
+<p>Either create a new, dedicated environment (the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file does not set a name, so pick one with <code class="docutils literal notranslate"><span class="pre">-n</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pyiron_meltingpoint</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">pyiron_meltingpoint</span>
 </pre></div>
 </div>
-<p>For the installation of pyiron and the configuration of Lammps and NGLview within pyiron please refer to the <a class="reference external" href="https://pyiron.readthedocs.io/en/latest/source/installation.html">pyiron manual</a>.</p>
-</section>
+<p>or install the dependencies into an environment you already have activated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">update</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">interfacemethod</span></code> is also available on PyPI (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">interfacemethod</span></code>), but LAMMPS itself and a number of the other dependencies are not pure Python packages, so installing via conda/<code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> is the recommended and tested way to get a working setup.</p>
+<p>This repository is developed and continuously tested primarily on Linux, in addition the unit tests are also tested on macOS; Windows users are recommended to use the Linux subsystem for Windows (WSL).</p>
 <section id="run-the-jupyter-notebook">
-<h2>Run the Jupyter Notebook<a class="headerlink" href="#run-the-jupyter-notebook" title="Permalink to this heading">#</a></h2>
-<p>You can directly download the Jupyter notebook from this Github repositorry <a class="reference external" href="https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/script.ipynb"><em>script.ipynb</em></a> copy it to your pyiron projects folder and execute it there. In line 10 and 11 the input parameters can be modified to select a custom potential and change parameters of the melting point calculation. After the calculation finished successfully it creates an <em>output.json</em> file which contains the final melting point prediction as well as the intermediate results.</p>
-</section>
-<section id="analyse">
-<h2>Analyse<a class="headerlink" href="#analyse" title="Permalink to this heading">#</a></h2>
-<p>You can analyse the melting point calculation using the <a class="reference external" href="https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/plot.ipynb"><em>plot.ipynb</em></a> notebook.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="use-the-melting-point-method-with-snakemake">
-<h1>Use the melting point method with snakemake<a class="headerlink" href="#use-the-melting-point-method-with-snakemake" title="Permalink to this heading">#</a></h1>
-<p>In contrast to the pyiron approach snakemake drastically reduces the number of input parameters available to the user. Snakemake handles the setup of pyiron and the installation of the dependencies via conda. This method is recommended for high throughput calculation as well as automated validation of interatomic potentials. Still it might also be sufficient for users who just want to calculate the melting point for a given interatomic potential. Both approaches are limited to the linux operation system and have been successfully tested with the linux subsystem for windows.</p>
-<p>Start with installing snakemake from conda:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">snakemake</span><span class="o">=</span><span class="mf">5.30</span>
-</pre></div>
-</div>
-<p>Copy one of the <em>input.json</em> files from the examples to the root of this directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">examples</span><span class="o">/</span><span class="n">bccFe</span><span class="o">/</span><span class="nb">input</span><span class="o">.</span><span class="n">json</span> <span class="o">.</span>
-</pre></div>
-</div>
-<p>The content of the <em>input.json</em> is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;pair_style eam/alloy </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;pair_coeff * * Fe-C-Bec07.eam Fe C</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="p">],</span> 
-    <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;./examples/bccFe/Fe-C-Bec07.eam&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Fe&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span> 
-    <span class="s2">&quot;element&quot;</span><span class="p">:</span> <span class="s2">&quot;Fe&quot;</span>
+<h2>Run the Jupyter Notebook<a class="headerlink" href="#run-the-jupyter-notebook" title="Link to this heading">#</a></h2>
+<p>The melting point protocol is executed from <a class="reference internal" href="scripts/script.html"><span class="std std-doc"><em>script.ipynb</em></span></a>. Copy the notebook to the directory you want to run the calculation in - typically next to an <code class="docutils literal notranslate"><span class="pre">input.json</span></code> file and the corresponding potential file, for example one of the <a class="reference internal" href="#examples"><span class="xref myst">examples</span></a> discussed below - and start Jupyter there.</p>
+<p>The first cells of the notebook define the calculation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">project_path</span></code> - working directory the individual LAMMPS calculations are executed in.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_file</span></code> / <code class="docutils literal notranslate"><span class="pre">output_file</span></code> - the <code class="docutils literal notranslate"><span class="pre">input.json</span></code> file the calculation is loaded from (if it exists) and the <code class="docutils literal notranslate"><span class="pre">output.json</span></code> file the final melting point prediction as well as the intermediate results are written to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lmp_command</span></code> - the command used to call LAMMPS, by default <code class="docutils literal notranslate"><span class="pre">lmp</span> <span class="pre">-in</span> <span class="pre">lmp.in</span></code>. To parallelise the individual LAMMPS calls with MPI prefix it accordingly, e.g. <code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-n</span> <span class="pre">4</span> <span class="pre">lmp</span> <span class="pre">-in</span> <span class="pre">lmp.in</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_workers</span></code> - the number of LAMMPS calculations <a class="reference external" href="https://github.com/pyiron/executorlib">executorlib</a> is allowed to run concurrently on the local machine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">project_parameter</span></code> - the numerical settings of the melting point protocol (number of atoms, run lengths, convergence criteria, …) together with default values which can be overwritten via the <code class="docutils literal notranslate"><span class="pre">input.json</span></code> file.</p></li>
+</ul>
+<p>The content of the <code class="docutils literal notranslate"><span class="pre">input.json</span></code> file is:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"pair_style eam/alloy \n"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"pair_coeff * * Fe-C-Bec07.eam Fe C\n"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fe-C-Bec07.eam"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"species"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Fe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"C"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"element"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fe"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>After copying the <em>input.json</em> it can be executed using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">conda</span> <span class="o">--</span><span class="n">cores</span> <span class="mi">1</span> 
+<p>All remaining cells of the notebook - marked with <em>“From here on the notebook is automated - no change required”</em> - execute the interface method fully automatically: an initial melting temperature bracket is estimated, a solid-liquid interface is built and iterated on, and the iteration is repeated until the convergence criterion is reached or a maximum number of iterations is exceeded. The <code class="docutils literal notranslate"><span class="pre">output.json</span></code> file is updated after every step, so an interrupted calculation can be continued by simply rerunning the notebook in the same directory. The last cells of the notebook plot the convergence of the predicted melting temperature over the iterations, no separate analysis notebook is required any more.</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="#examples"><span class="xref myst">examples</span></a> directory contains ready to use <code class="docutils literal notranslate"><span class="pre">input.json</span></code> files and interatomic potentials for a bcc (<a class="reference internal" href="#examples/bccFe"><span class="xref myst">Fe</span></a>), fcc (<a class="reference internal" href="#examples/fccAl"><span class="xref myst">Al</span></a>), hcp (<a class="reference internal" href="#examples/hcpMg"><span class="xref myst">Mg</span></a>) and diamond (<a class="reference internal" href="#examples/diaSi"><span class="xref myst">Si</span></a>) structure, together with a short <code class="docutils literal notranslate"><span class="pre">README.md</span></code> describing the source of each potential. To run one of them, copy <code class="docutils literal notranslate"><span class="pre">scripts/script.ipynb</span></code> into the corresponding example folder and start Jupyter there, so the relative paths in <code class="docutils literal notranslate"><span class="pre">input.json</span></code> resolve correctly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">scripts</span><span class="o">/</span><span class="n">script</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">examples</span><span class="o">/</span><span class="n">bccFe</span><span class="o">/</span>
+<span class="n">cd</span> <span class="n">examples</span><span class="o">/</span><span class="n">bccFe</span>
+<span class="n">jupyter</span> <span class="n">notebook</span> <span class="n">script</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 </div>
-<p>The parameters defined in the <em>input.json</em> file will overwrite those in the Jupyter notebook. With this approach, there is no need to interfere with all the computational and technical details.</p>
-<p>The results are saved in the <em>output.json</em> file and can be analysed with the <a class="reference external" href="https://github.com/pyiron/pyiron_meltingpoint/blob/master/scripts/plot.ipynb"><em>plot.ipynb</em></a> notebook.</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="faq">
-<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h1>
+<h1>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h1>
 <section id="how-to-run-in-parallel">
-<h2>How to run in parallel?<a class="headerlink" href="#how-to-run-in-parallel" title="Permalink to this heading">#</a></h2>
-<p>A single melting point calculation takes 50-100 CPU hours, so it makes a lot of sense to run the code in parallel. While the protocol itself is written in a serial way, the individual Lammps calculation can be executed in parallel. To enable parallel execution inset the option:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;cpu_cores&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-</pre></div>
-</div>
-<p>Either in line 10 of the jupyter notebook or in the <em>input.json</em> file. When snakemake is used it is not necessary to increase the <code class="docutils literal notranslate"><span class="pre">--cores</span></code> count in the snakemake command.</p>
+<h2>How to run in parallel?<a class="headerlink" href="#how-to-run-in-parallel" title="Link to this heading">#</a></h2>
+<p>A single melting point calculation takes 50-100 CPU hours, so it makes a lot of sense to run the code in parallel. There are two independent levers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">max_workers</span></code> in the notebook controls how many LAMMPS calculations <a class="reference external" href="https://github.com/pyiron/executorlib">executorlib</a>’s <code class="docutils literal notranslate"><span class="pre">SingleNodeExecutor</span></code> is allowed to dispatch concurrently, e.g. the individual strain points of the interface method are embarrassingly parallel and are submitted at once.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lmp_command</span></code> controls how each individual LAMMPS call itself is parallelised, e.g. set it to <code class="docutils literal notranslate"><span class="pre">&quot;mpirun</span> <span class="pre">-n</span> <span class="pre">4</span> <span class="pre">lmp</span> <span class="pre">-in</span> <span class="pre">lmp.in&quot;</span></code> to run every LAMMPS calculation on 4 MPI ranks.</p></li>
+</ul>
 </section>
-<section id="how-to-submit-a-melting-point-calculation-to-the-queue">
-<h2>How to submit a melting point calculation to the queue?<a class="headerlink" href="#how-to-submit-a-melting-point-calculation-to-the-queue" title="Permalink to this heading">#</a></h2>
-<p>If you execute the notebook in pyiron, you can simply specify the queue in line 10 by adding the option:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;queue&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">queue_name</span><span class="o">&gt;</span><span class="p">,</span>
-</pre></div>
-</div>
-<p>With <code class="docutils literal notranslate"><span class="pre">&lt;queue_name&gt;</span></code> the name of the queue the calculation should be submitted to. More details about the queuing system configuration in pyiron is available as part of the <a class="reference external" href="https://github.com/pyiron/pysqa">pysqa</a> package.</p>
-<p>In contrast the <code class="docutils literal notranslate"><span class="pre">snakemake</span></code> command can be directly included in the submit script you usually use to submit calculation to your cluster. Here is an example submit script for the SLURM queuing system:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
-<span class="c1">#SBATCH --time=00:10:00</span>
-<span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks-per-node=8</span>
-<span class="c1">#SBATCH --job-name=&quot;melting_point&quot;</span>
-
-<span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">conda</span> <span class="o">--</span><span class="n">cores</span> <span class="mi">1</span> 
-</pre></div>
-</div>
-<p>In addition to specifying the number of cores in the submit script it is also necessary to set the <code class="docutils literal notranslate"><span class="pre">cpu_cores</span></code> option in the <em>input.json</em> file as explained above.</p>
+<section id="how-to-submit-a-melting-point-calculation-to-an-hpc-queue">
+<h2>How to submit a melting point calculation to an HPC queue?<a class="headerlink" href="#how-to-submit-a-melting-point-calculation-to-an-hpc-queue" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/pyiron/executorlib">executorlib</a> also provides cluster executors which submit each task as its own job to a queuing system instead of running it on the local machine. Replace <code class="docutils literal notranslate"><span class="pre">executorlib.SingleNodeExecutor</span></code> in the notebook with <code class="docutils literal notranslate"><span class="pre">executorlib.SlurmClusterExecutor</span></code> (for SLURM) or <code class="docutils literal notranslate"><span class="pre">executorlib.FluxClusterExecutor</span></code> (for the <a class="reference external" href="https://flux-framework.org">flux</a> framework) to submit every LAMMPS run individually to the queue, including the requested number of cores per task via the <code class="docutils literal notranslate"><span class="pre">resource_dict</span></code> argument. See the <a class="reference external" href="https://github.com/pyiron/executorlib">executorlib documentation</a> for the full list of available executors and their configuration options.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="acknowledgments">
-<h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">#</a></h1>
+<h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h1>
 <p>If you use the melting point protocol in your scientific work, please consider citing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nd">@article</span><span class="p">{</span><span class="n">melting</span><span class="o">-</span><span class="n">paper</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nd">@article</span><span class="p">{</span><span class="n">melting</span><span class="p">,</span>
     <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span> <span class="n">fully</span> <span class="n">automated</span> <span class="n">approach</span> <span class="n">to</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">melting</span> <span class="n">temperature</span> <span class="n">of</span> <span class="n">elemental</span> <span class="n">crystals</span><span class="p">},</span>
     <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Computational</span> <span class="n">Materials</span> <span class="n">Science</span><span class="p">}</span>
     <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">187</span><span class="p">},</span>
@@ -483,7 +466,7 @@ document.write(`
     <span class="n">keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">Interface</span> <span class="n">method</span><span class="p">,</span> <span class="n">Melting</span> <span class="n">point</span><span class="p">,</span> <span class="n">Arbitrary</span> <span class="n">potential</span><span class="p">,</span> <span class="n">pyiron</span><span class="p">},</span>
   <span class="p">}</span>
 
-  <span class="nd">@article</span><span class="p">{</span><span class="n">pyiron</span><span class="o">-</span><span class="n">paper</span><span class="p">,</span>
+  <span class="nd">@article</span><span class="p">{</span><span class="n">pyiron</span><span class="p">,</span>
     <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">pyiron</span><span class="p">:</span> <span class="n">An</span> <span class="n">integrated</span> <span class="n">development</span> <span class="n">environment</span> <span class="k">for</span> <span class="n">computational</span> <span class="n">materials</span> <span class="n">science</span><span class="p">},</span>
     <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Computational</span> <span class="n">Materials</span> <span class="n">Science</span><span class="p">},</span>
     <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">163</span><span class="p">},</span>
@@ -506,6 +489,20 @@ document.write(`
     <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">},</span>
     <span class="n">number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">43</span><span class="p">},</span>
     <span class="n">page</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1824</span><span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nd">@article</span><span class="p">{</span><span class="n">executorlib</span><span class="p">,</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Executorlib</span> <span class="o">--</span> <span class="n">Up</span><span class="o">-</span><span class="n">scaling</span> <span class="n">Python</span> <span class="n">workflows</span> <span class="k">for</span> <span class="n">hierarchical</span> <span class="n">heterogenous</span> <span class="n">high</span><span class="o">-</span><span class="n">performance</span> <span class="n">computing</span><span class="p">},</span>
+    <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Journal</span> <span class="n">of</span> <span class="n">Open</span> <span class="n">Source</span> <span class="n">Software</span><span class="p">},</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">},</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">108</span><span class="p">},</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7782</span><span class="p">},</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2025</span><span class="p">},</span>
+    <span class="n">issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2475</span><span class="o">-</span><span class="mi">9066</span><span class="p">},</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.21105</span><span class="o">/</span><span class="n">joss</span><span class="mf">.07782</span><span class="p">},</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">joss</span><span class="o">.</span><span class="n">theoj</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">papers</span><span class="o">/</span><span class="mf">10.21105</span><span class="o">/</span><span class="n">joss</span><span class="mf">.07782</span><span class="p">},</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Jan</span> <span class="n">Janssen</span> <span class="ow">and</span> <span class="n">Michael</span> <span class="n">Gilbert</span> <span class="n">Taylor</span> <span class="ow">and</span> <span class="n">Ping</span> <span class="n">Yang</span> <span class="ow">and</span> <span class="n">Joerg</span> <span class="n">Neugebauer</span> <span class="ow">and</span> <span class="n">Danny</span> <span class="n">Perez</span><span class="p">},</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">High</span><span class="o">-</span><span class="n">performance</span> <span class="n">computing</span><span class="p">,</span> <span class="n">Workflow</span> <span class="n">management</span><span class="p">,</span> <span class="n">Python</span><span class="p">},</span>
   <span class="p">}</span>
 </pre></div>
 </div>
@@ -540,7 +537,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="right-next"
@@ -548,7 +545,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">From here on the notebook is automated - no change required !</p>
+        <p class="prev-next-title">Iron - bcc</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -559,26 +556,27 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#different-versions">Different Versions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-melting-point-method-in-pyiron">Use the melting point method in pyiron</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-jupyter-notebook">Run the Jupyter Notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse">Analyse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-melting-point-method-with-snakemake">Use the melting point method with snakemake</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-in-parallel">How to run in parallel?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit-a-melting-point-calculation-to-the-queue">How to submit a melting point calculation to the queue?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit-a-melting-point-calculation-to-an-hpc-queue">How to submit a melting point calculation to an HPC queue?</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
@@ -607,7 +605,7 @@ By pyiron
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -631,8 +629,8 @@ By pyiron
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
